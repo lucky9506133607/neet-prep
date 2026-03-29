@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEET Prep - You've Got This, Baby!</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-heart">&hearts;</span> NEET Prep
+      </a>
+
+      <!-- Hamburger menu for mobile -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#planner" class="nav-link">Planner</a></li>
+        <li><a href="#subjects" class="nav-link">Subjects</a></li>
+        <li><a href="#timer" class="nav-link">Timer</a></li>
+        <li><a href="#progress" class="nav-link">Progress</a></li>
+        <li><a href="#quotes" class="nav-link">Quotes</a></li>
+        <li>
+          <button class="surprise-btn-nav" id="surpriseNavBtn" title="A little surprise for you!">
+            <span class="surprise-icon">&#127873;</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO / HOME SECTION ==================== -->
+  <section class="hero" id="home">
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="hero-content">
+      <p class="hero-greeting animate-fade-up">Hello, Beautiful</p>
+      <h1 class="hero-title animate-fade-up delay-1">
+        You're Going to <span class="highlight">Crack NEET</span>
+      </h1>
+      <p class="hero-subtitle animate-fade-up delay-2">
+        I made this just for you &mdash; because every queen deserves her own kingdom of knowledge.
+        <br />Study hard, stay strong, and remember&hellip; <strong>I believe in you more than anyone.</strong>
+      </p>
+      <div class="hero-buttons animate-fade-up delay-3">
+        <a href="#planner" class="btn btn-primary">Start Studying</a>
+        <button class="btn btn-secondary" id="surpriseHeroBtn">
+          &#127873; Surprise for You
+        </button>
+      </div>
+      <div class="hero-stats animate-fade-up delay-4">
+        <div class="stat">
+          <span class="stat-number" id="statDays">--</span>
+          <span class="stat-label">Days of Love</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">180</span>
+          <span class="stat-label">Topics Covered</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">720</span>
+          <span class="stat-label">Target Score</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll Down</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT / IMAGE + TEXT SECTION ==================== -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Image Side -->
+        <div class="about-image-wrapper">
+          <div class="about-image-glow"></div>
+          <div class="about-image-box">
+            <img
+              src="WhatsApp Image 2026-03-29 at 11.25.26 PM.jpeg"
+              alt="Dr. Sakshi Srivastava - Future Doctor"
+              class="about-image"
+              loading="lazy"
+            />
+            <div class="about-image-overlay">
+              <span>Future Doctor</span>
+            </div>
+          </div>
+          <!-- Decorative floating badges -->
+          <div class="about-badge badge-top">&#129658; NEET Warrior</div>
+          <div class="about-badge badge-bottom">&#127775; Future MBBS</div>
+        </div>
+
+        <!-- Text Side -->
+        <div class="about-text">
+          <span class="about-tag">&#10024; Dedicated to You</span>
+          <h2 class="about-heading">Dr. Sakshi Srivastava &#129658;</h2>
+          <h3 class="about-subheading">Future Doctor in the making</h3>
+          <p class="about-paragraph">
+            You are not just preparing for NEET, you are building a life that will heal others.
+            Every late night, every sacrifice, every effort you make today is shaping the amazing
+            doctor you will become.
+          </p>
+          <div class="about-highlights">
+            <div class="about-highlight-item">
+              <span class="highlight-icon">&#128218;</span>
+              <div>
+                <strong>Dedicated Learner</strong>
+                <p>Consistent effort every single day</p>
+              </div>
+            </div>
+            <div class="about-highlight-item">
+              <span class="highlight-icon">&#127919;</span>
+              <div>
+                <strong>Goal: NEET 2026</strong>
+                <p>Every chapter brings you closer</p>
+              </div>
+            </div>
+            <div class="about-highlight-item">
+              <span class="highlight-icon">&#128170;</span>
+              <div>
+                <strong>Unstoppable Spirit</strong>
+                <p>Nothing can break your determination</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DAILY STUDY PLANNER ==================== -->
+  <section class="section planner-section" id="planner">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Daily Study Planner</h2>
+        <p class="section-subtitle">Plan your day, conquer the syllabus &hearts;</p>
+      </div>
+
+      <div class="planner-grid">
+        <!-- Add Task Card -->
+        <div class="planner-card add-task-card">
+          <h3>Add Today's Tasks</h3>
+          <div class="add-task-form">
+            <select id="taskSubject" class="task-input">
+              <option value="physics">Physics</option>
+              <option value="chemistry">Chemistry</option>
+              <option value="biology">Biology</option>
+              <option value="revision">Revision</option>
+              <option value="test">Mock Test</option>
+            </select>
+            <input type="text" id="taskInput" class="task-input" placeholder="e.g., Complete Kinematics chapter" />
+            <button class="btn btn-primary btn-sm" id="addTaskBtn">+ Add Task</button>
+          </div>
+        </div>
+
+        <!-- Today's Tasks Card -->
+        <div class="planner-card tasks-card">
+          <div class="tasks-header">
+            <h3>Today's Tasks</h3>
+            <span class="tasks-count" id="tasksCount">0 / 0</span>
+          </div>
+          <ul class="tasks-list" id="tasksList">
+            <li class="empty-tasks">No tasks yet. Add some above! You can do this!</li>
+          </ul>
+          <button class="btn btn-outline btn-sm" id="clearCompletedBtn">Clear Completed</button>
+        </div>
+
+        <!-- Weekly Overview -->
+        <div class="planner-card weekly-card">
+          <h3>This Week's Progress</h3>
+          <div class="weekly-bars" id="weeklyBars">
+            <!-- Generated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SUBJECTS SECTION ==================== -->
+  <section class="section subjects-section" id="subjects">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Subject Notes</h2>
+        <p class="section-subtitle">Your complete guide to NEET syllabus</p>
+      </div>
+
+      <!-- Subject Tabs -->
+      <div class="subject-tabs">
+        <button class="subject-tab active" data-subject="physics">
+          <span class="tab-icon">&#9883;</span> Physics
+        </button>
+        <button class="subject-tab" data-subject="chemistry">
+          <span class="tab-icon">&#9878;</span> Chemistry
+        </button>
+        <button class="subject-tab" data-subject="biology">
+          <span class="tab-icon">&#127793;</span> Biology
+        </button>
+      </div>
+
+      <!-- Physics Content -->
+      <div class="subject-content active" id="physics-content">
+        <div class="subject-overview">
+          <div class="overview-card">
+            <h3>&#127919; High-Weightage Topics</h3>
+            <ul class="topic-list">
+              <li><span class="priority high">Must Do</span> Mechanics &mdash; Laws of Motion, Work-Energy-Power</li>
+              <li><span class="priority high">Must Do</span> Electrodynamics &mdash; Current Electricity, EMI</li>
+              <li><span class="priority high">Must Do</span> Optics &mdash; Ray &amp; Wave Optics</li>
+              <li><span class="priority medium">Important</span> Modern Physics &mdash; Atoms, Nuclei, Dual Nature</li>
+              <li><span class="priority medium">Important</span> Thermodynamics &mdash; KTG, Laws of Thermodynamics</li>
+              <li><span class="priority low">Good to Know</span> Semiconductors &mdash; Diodes, Transistors</li>
+            </ul>
+          </div>
+          <div class="overview-card">
+            <h3>&#128218; Chapter-wise Notes</h3>
+            <div class="chapter-accordion">
+              <div class="accordion-item">
+                <button class="accordion-header">Units &amp; Measurements</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>SI Units:</strong> 7 base units &mdash; meter, kilogram, second, ampere, kelvin, mole, candela</li>
+                    <li><strong>Dimensional Analysis:</strong> Use [M L T] to check formula validity</li>
+                    <li><strong>Significant Figures:</strong> All non-zero digits are significant; leading zeros are not</li>
+                    <li><strong>Errors:</strong> Absolute, relative, and percentage errors in measurements</li>
+                    <li><strong>Tip:</strong> Practice dimensional analysis problems &mdash; easy marks in NEET!</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Laws of Motion</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Newton's 1st Law:</strong> A body remains at rest or in uniform motion unless acted upon by a force</li>
+                    <li><strong>Newton's 2nd Law:</strong> F = ma (net force = mass &times; acceleration)</li>
+                    <li><strong>Newton's 3rd Law:</strong> Every action has an equal and opposite reaction</li>
+                    <li><strong>Friction:</strong> f = &mu;N &mdash; static friction &ge; kinetic friction</li>
+                    <li><strong>Free Body Diagrams:</strong> Always draw FBDs for complex problems!</li>
+                    <li><strong>NEET Focus:</strong> Problems on connected bodies, pulleys, and inclined planes</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Work, Energy &amp; Power</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Work:</strong> W = F &middot; d &middot; cos&theta;</li>
+                    <li><strong>Kinetic Energy:</strong> KE = &frac12;mv&sup2;</li>
+                    <li><strong>Potential Energy:</strong> PE = mgh (gravitational)</li>
+                    <li><strong>Work-Energy Theorem:</strong> Net work = Change in KE</li>
+                    <li><strong>Conservation of Energy:</strong> Total energy in an isolated system is constant</li>
+                    <li><strong>Power:</strong> P = W/t = F &middot; v</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Electrostatics</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Coulomb's Law:</strong> F = kq&sub1;q&sub2;/r&sup2;</li>
+                    <li><strong>Electric Field:</strong> E = F/q (force per unit charge)</li>
+                    <li><strong>Electric Potential:</strong> V = kQ/r</li>
+                    <li><strong>Gauss's Law:</strong> &Phi; = q/&epsilon;&sub0; (flux through closed surface)</li>
+                    <li><strong>Capacitors:</strong> C = Q/V, series and parallel combinations</li>
+                    <li><strong>NEET Tip:</strong> Master electric field diagrams and potential energy concepts</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Current Electricity</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Ohm's Law:</strong> V = IR</li>
+                    <li><strong>Kirchhoff's Laws:</strong> Junction rule (current) &amp; Loop rule (voltage)</li>
+                    <li><strong>Wheatstone Bridge:</strong> Balanced when P/Q = R/S</li>
+                    <li><strong>Meter Bridge &amp; Potentiometer:</strong> Important for NEET practical questions</li>
+                    <li><strong>Power:</strong> P = VI = I&sup2;R = V&sup2;/R</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chemistry Content -->
+      <div class="subject-content" id="chemistry-content">
+        <div class="subject-overview">
+          <div class="overview-card">
+            <h3>&#127919; High-Weightage Topics</h3>
+            <ul class="topic-list">
+              <li><span class="priority high">Must Do</span> Organic Chemistry &mdash; GOC, Reactions, Named Reactions</li>
+              <li><span class="priority high">Must Do</span> Chemical Bonding &amp; Molecular Structure</li>
+              <li><span class="priority high">Must Do</span> Coordination Compounds</li>
+              <li><span class="priority medium">Important</span> Equilibrium &mdash; Ionic, Chemical, pH</li>
+              <li><span class="priority medium">Important</span> p-Block &amp; d-Block Elements</li>
+              <li><span class="priority low">Good to Know</span> Biomolecules, Polymers, Chemistry in Everyday Life</li>
+            </ul>
+          </div>
+          <div class="overview-card">
+            <h3>&#128218; Chapter-wise Notes</h3>
+            <div class="chapter-accordion">
+              <div class="accordion-item">
+                <button class="accordion-header">Atomic Structure</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Bohr's Model:</strong> Electrons orbit in fixed energy levels; E = -13.6/n&sup2; eV</li>
+                    <li><strong>Quantum Numbers:</strong> n (principal), l (azimuthal), m (magnetic), s (spin)</li>
+                    <li><strong>Aufbau Principle:</strong> Electrons fill lowest energy orbitals first</li>
+                    <li><strong>Hund's Rule:</strong> Every orbital in a subshell gets one electron before pairing</li>
+                    <li><strong>Pauli's Exclusion:</strong> No two electrons can have same 4 quantum numbers</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Chemical Bonding</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Ionic Bond:</strong> Transfer of electrons (high &Delta;EN)</li>
+                    <li><strong>Covalent Bond:</strong> Sharing of electrons</li>
+                    <li><strong>VSEPR Theory:</strong> Predicts molecular geometry from electron pairs</li>
+                    <li><strong>Hybridization:</strong> sp (linear), sp&sup2; (trigonal planar), sp&sup3; (tetrahedral)</li>
+                    <li><strong>MOT:</strong> Bonding &amp; antibonding molecular orbitals, bond order</li>
+                    <li><strong>Hydrogen Bonding:</strong> Intermolecular force with F, O, N</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Organic Chemistry &mdash; GOC</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Inductive Effect:</strong> +I (electron donating) and -I (electron withdrawing)</li>
+                    <li><strong>Resonance:</strong> Delocalization of electrons across conjugated systems</li>
+                    <li><strong>Hyperconjugation:</strong> No-bond resonance with &alpha;-hydrogens</li>
+                    <li><strong>Carbocation Stability:</strong> 3&deg; > 2&deg; > 1&deg; > CH&sub3;+</li>
+                    <li><strong>Reaction Types:</strong> SN1, SN2, E1, E2 &mdash; know the conditions!</li>
+                    <li><strong>Named Reactions:</strong> Wurtz, Aldol, Cannizzaro, Kolbe &mdash; memorize!</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Thermodynamics &amp; Equilibrium</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Enthalpy:</strong> &Delta;H = heat change at constant pressure</li>
+                    <li><strong>Entropy:</strong> &Delta;S = measure of randomness</li>
+                    <li><strong>Gibbs Free Energy:</strong> &Delta;G = &Delta;H - T&Delta;S (spontaneity check)</li>
+                    <li><strong>Equilibrium Constant:</strong> K = products/reactants at equilibrium</li>
+                    <li><strong>Le Chatelier's Principle:</strong> System adjusts to counter applied stress</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Coordination Compounds</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Werner's Theory:</strong> Primary (ionizable) &amp; secondary (non-ionizable) valency</li>
+                    <li><strong>IUPAC Naming:</strong> Ligands (alphabetical) + metal + oxidation state</li>
+                    <li><strong>Isomerism:</strong> Geometrical (cis/trans), optical, linkage, ionization</li>
+                    <li><strong>Crystal Field Theory:</strong> t2g and eg splitting, CFSE</li>
+                    <li><strong>Magnetic Properties:</strong> Paramagnetic vs diamagnetic based on unpaired electrons</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Biology Content -->
+      <div class="subject-content" id="biology-content">
+        <div class="subject-overview">
+          <div class="overview-card">
+            <h3>&#127919; High-Weightage Topics</h3>
+            <ul class="topic-list">
+              <li><span class="priority high">Must Do</span> Human Physiology &mdash; All systems (digestion, respiration, circulation)</li>
+              <li><span class="priority high">Must Do</span> Genetics &amp; Evolution &mdash; Mendel's laws, molecular basis</li>
+              <li><span class="priority high">Must Do</span> Ecology &amp; Environment</li>
+              <li><span class="priority medium">Important</span> Plant Physiology &mdash; Photosynthesis, Respiration</li>
+              <li><span class="priority medium">Important</span> Cell Biology &amp; Biomolecules</li>
+              <li><span class="priority medium">Important</span> Reproduction &mdash; Human &amp; Plant</li>
+              <li><span class="priority low">Good to Know</span> Biotechnology &amp; its Applications</li>
+            </ul>
+          </div>
+          <div class="overview-card">
+            <h3>&#128218; Chapter-wise Notes</h3>
+            <div class="chapter-accordion">
+              <div class="accordion-item">
+                <button class="accordion-header">Cell: The Unit of Life</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Cell Theory:</strong> All living things are made of cells; cell is the basic unit of life</li>
+                    <li><strong>Prokaryotic vs Eukaryotic:</strong> Nucleus presence, membrane-bound organelles</li>
+                    <li><strong>Cell Organelles:</strong> Mitochondria (powerhouse), ER, Golgi, Lysosomes, Ribosomes</li>
+                    <li><strong>Cell Membrane:</strong> Fluid mosaic model &mdash; phospholipid bilayer + proteins</li>
+                    <li><strong>Nucleus:</strong> Contains DNA, nuclear envelope with pores, nucleolus</li>
+                    <li><strong>NEET Tip:</strong> Diagrams are important &mdash; practice drawing organelles!</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Human Physiology &mdash; Digestion</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Alimentary Canal:</strong> Mouth &rarr; Esophagus &rarr; Stomach &rarr; Small intestine &rarr; Large intestine</li>
+                    <li><strong>Enzymes:</strong> Amylase (starch), Pepsin (protein), Lipase (fats)</li>
+                    <li><strong>Stomach:</strong> HCl activates pepsinogen to pepsin; pH ~1.5-2</li>
+                    <li><strong>Small Intestine:</strong> Major absorption site; villi increase surface area</li>
+                    <li><strong>Liver:</strong> Produces bile for fat emulsification</li>
+                    <li><strong>NEET Tip:</strong> Know all enzymes and their substrates!</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Genetics &mdash; Mendel's Laws</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Law of Dominance:</strong> One allele dominates over the other</li>
+                    <li><strong>Law of Segregation:</strong> Alleles separate during gamete formation</li>
+                    <li><strong>Law of Independent Assortment:</strong> Genes on different chromosomes sort independently</li>
+                    <li><strong>Monohybrid Cross:</strong> 3:1 phenotypic ratio (Tt x Tt)</li>
+                    <li><strong>Dihybrid Cross:</strong> 9:3:3:1 ratio</li>
+                    <li><strong>Incomplete Dominance:</strong> Blending (e.g., pink snapdragons)</li>
+                    <li><strong>Codominance:</strong> Both alleles expressed (e.g., AB blood group)</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Ecology &amp; Environment</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Ecosystem:</strong> Biotic + abiotic components interacting together</li>
+                    <li><strong>Food Chain:</strong> Producer &rarr; Primary consumer &rarr; Secondary &rarr; Tertiary</li>
+                    <li><strong>Energy Flow:</strong> Only 10% energy transfers to next trophic level</li>
+                    <li><strong>Ecological Pyramids:</strong> Number, biomass, and energy pyramids</li>
+                    <li><strong>Biogeochemical Cycles:</strong> Carbon, nitrogen, phosphorus, water cycles</li>
+                    <li><strong>Biodiversity:</strong> &alpha;, &beta;, &gamma; diversity; hotspots (Western Ghats!)</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Photosynthesis</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Light Reaction:</strong> Occurs in thylakoids; produces ATP + NADPH + O&sub2;</li>
+                    <li><strong>Dark Reaction (Calvin Cycle):</strong> Occurs in stroma; fixes CO&sub2; into glucose</li>
+                    <li><strong>Photosystems:</strong> PS-I (P700) and PS-II (P680)</li>
+                    <li><strong>C3 vs C4 Plants:</strong> C4 has Kranz anatomy, no photorespiration</li>
+                    <li><strong>CAM Plants:</strong> Fix CO&sub2; at night (succulents, cacti)</li>
+                    <li><strong>Factors:</strong> Light intensity, CO&sub2; concentration, temperature</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== POMODORO TIMER ==================== -->
+  <section class="section timer-section" id="timer">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Study Timer</h2>
+        <p class="section-subtitle">Stay focused, take breaks &mdash; you're doing amazing!</p>
+      </div>
+
+      <div class="timer-container">
+        <div class="timer-card">
+          <!-- Timer Mode Tabs -->
+          <div class="timer-modes">
+            <button class="timer-mode active" data-minutes="25">Focus (25m)</button>
+            <button class="timer-mode" data-minutes="5">Short Break (5m)</button>
+            <button class="timer-mode" data-minutes="15">Long Break (15m)</button>
+          </div>
+
+          <!-- Timer Display -->
+          <div class="timer-display">
+            <svg class="timer-svg" viewBox="0 0 200 200">
+              <circle class="timer-bg-circle" cx="100" cy="100" r="90" />
+              <circle class="timer-progress-circle" id="timerCircle" cx="100" cy="100" r="90" />
+            </svg>
+            <div class="timer-text">
+              <span class="timer-time" id="timerDisplay">25:00</span>
+              <span class="timer-label" id="timerLabel">Focus Time</span>
+            </div>
+          </div>
+
+          <!-- Timer Controls -->
+          <div class="timer-controls">
+            <button class="btn btn-primary" id="timerStartBtn">Start</button>
+            <button class="btn btn-outline" id="timerResetBtn">Reset</button>
+          </div>
+
+          <!-- Session Counter -->
+          <div class="timer-sessions">
+            <span>Sessions completed today: </span>
+            <span class="session-count" id="sessionCount">0</span>
+            <span class="session-hearts" id="sessionHearts"></span>
+          </div>
+        </div>
+
+        <!-- Study Tips -->
+        <div class="study-tips-card">
+          <h3>Study Tips &hearts;</h3>
+          <ul class="tips-list">
+            <li>Focus for 25 minutes, then take a 5-minute break</li>
+            <li>After 4 sessions, take a longer 15-minute break</li>
+            <li>Keep water nearby &mdash; hydration boosts focus!</li>
+            <li>Put your phone on silent (except this website!)</li>
+            <li>Revise what you studied before sleeping</li>
+            <li>You're stronger than you think &hearts;</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROGRESS TRACKER ==================== -->
+  <section class="section progress-section" id="progress">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Progress Tracker</h2>
+        <p class="section-subtitle">Look how far you've come, baby!</p>
+      </div>
+
+      <div class="progress-grid">
+        <!-- Overall Progress -->
+        <div class="progress-card overall-progress">
+          <h3>Overall NEET Preparation</h3>
+          <div class="circular-progress" id="overallProgress">
+            <svg viewBox="0 0 160 160">
+              <circle class="progress-bg" cx="80" cy="80" r="70" />
+              <circle class="progress-fill" id="overallCircle" cx="80" cy="80" r="70" />
+            </svg>
+            <div class="progress-text">
+              <span class="progress-percent" id="overallPercent">0%</span>
+              <span class="progress-label">Complete</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subject Progress -->
+        <div class="progress-card subject-progress-card">
+          <h3>Subject-wise Progress</h3>
+
+          <div class="subject-progress-item">
+            <div class="subject-info">
+              <span class="subject-name">&#9883; Physics</span>
+              <span class="subject-percent" id="physicsPercent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar-fill physics-fill" id="physicsFill"></div>
+            </div>
+          </div>
+
+          <div class="subject-progress-item">
+            <div class="subject-info">
+              <span class="subject-name">&#9878; Chemistry</span>
+              <span class="subject-percent" id="chemistryPercent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar-fill chemistry-fill" id="chemistryFill"></div>
+            </div>
+          </div>
+
+          <div class="subject-progress-item">
+            <div class="subject-info">
+              <span class="subject-name">&#127793; Biology</span>
+              <span class="subject-percent" id="biologyPercent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar-fill biology-fill" id="biologyFill"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter Checklist -->
+        <div class="progress-card checklist-card">
+          <h3>Chapter Completion Checklist</h3>
+          <div class="checklist-tabs">
+            <button class="checklist-tab active" data-target="physics-checklist">Physics</button>
+            <button class="checklist-tab" data-target="chemistry-checklist">Chemistry</button>
+            <button class="checklist-tab" data-target="biology-checklist">Biology</button>
+          </div>
+
+          <div class="checklist-content active" id="physics-checklist">
+            <ul class="checklist">
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Units &amp; Measurements</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Motion in a Straight Line</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Motion in a Plane</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Laws of Motion</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Work, Energy &amp; Power</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Rotational Motion</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Gravitation</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Mechanical Properties of Solids</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Mechanical Properties of Fluids</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Thermal Properties of Matter</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Thermodynamics</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Kinetic Theory of Gases</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Oscillations</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Waves</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Electrostatics</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Current Electricity</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Magnetic Effects of Current</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Magnetism &amp; Matter</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> EMI &amp; AC</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> EM Waves</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Ray Optics</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Wave Optics</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Dual Nature of Matter</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Atoms &amp; Nuclei</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Semiconductor Electronics</label></li>
+            </ul>
+          </div>
+
+          <div class="checklist-content" id="chemistry-checklist">
+            <ul class="checklist">
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Some Basic Concepts of Chemistry</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Atomic Structure</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Classification of Elements</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Chemical Bonding</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> States of Matter</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Thermodynamics</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Equilibrium</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Redox Reactions</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Hydrogen</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> s-Block Elements</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> p-Block Elements</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Organic Chemistry &mdash; GOC</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Hydrocarbons</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Solutions</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Electrochemistry</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Chemical Kinetics</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Surface Chemistry</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> d &amp; f Block Elements</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Coordination Compounds</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Haloalkanes &amp; Haloarenes</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Alcohols, Phenols &amp; Ethers</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Aldehydes, Ketones &amp; Carboxylic Acids</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Amines</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Biomolecules</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Polymers</label></li>
+            </ul>
+          </div>
+
+          <div class="checklist-content" id="biology-checklist">
+            <ul class="checklist">
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> The Living World</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Biological Classification</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Plant Kingdom</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Animal Kingdom</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Morphology of Flowering Plants</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Anatomy of Flowering Plants</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Structural Organisation in Animals</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Cell: Unit of Life</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Biomolecules</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Cell Cycle &amp; Division</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Transport in Plants</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Mineral Nutrition</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Photosynthesis</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Respiration in Plants</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Plant Growth &amp; Development</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Digestion &amp; Absorption</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Breathing &amp; Exchange of Gases</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Body Fluids &amp; Circulation</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Excretory Products</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Locomotion &amp; Movement</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Neural Control &amp; Coordination</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Chemical Coordination</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Reproduction in Organisms</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Human Reproduction</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Reproductive Health</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Principles of Inheritance</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Molecular Basis of Inheritance</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Evolution</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Human Health &amp; Disease</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Microbes in Human Welfare</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Biotechnology: Principles</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Biotechnology: Applications</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Organisms &amp; Populations</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Ecosystem</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Biodiversity &amp; Conservation</label></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MOTIVATIONAL QUOTES ==================== -->
+  <section class="section quotes-section" id="quotes">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Daily Motivation</h2>
+        <p class="section-subtitle">Words to keep you going</p>
+      </div>
+
+      <div class="quote-showcase">
+        <div class="quote-card" id="quoteCard">
+          <div class="quote-marks">&ldquo;</div>
+          <p class="quote-text" id="quoteText">Loading inspiration...</p>
+          <p class="quote-author" id="quoteAuthor">&mdash; Loading</p>
+        </div>
+        <button class="btn btn-primary" id="newQuoteBtn">Lucky Mantra</button>
+      </div>
+
+      <!-- Personal Messages -->
+      <div class="personal-messages">
+        <h3>Daily Reminders for NEET Warriors</h3>
+        <div class="messages-grid" id="messagesGrid">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SURPRISE POPUP ==================== -->
+  <div class="surprise-overlay" id="surpriseOverlay">
+    <div class="surprise-popup" id="surprisePopup">
+      <button class="surprise-close" id="surpriseClose">&times;</button>
+      <div class="surprise-hearts" id="surpriseHearts"></div>
+      <div class="surprise-content">
+        <h2 class="surprise-title">Hey Future Doctor</h2>
+        <div class="surprise-emoji">&#129658;</div>
+        <p class="surprise-message" id="surpriseMessage">
+          NEET preparation is tough &mdash; but so are you. Every chapter you finish,
+          every mock test you take, every mistake you learn from is building the
+          future doctor inside you. Don't stop now.
+        </p>
+        <p class="surprise-signature">
+          &mdash; Stay Disciplined. Stay Focused.
+        </p>
+        <div class="surprise-sparkles">
+          <span>&#10024;</span><span>&#10024;</span><span>&#10024;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4><span class="logo-heart">&hearts;</span> NEET Prep</h4>
+          <p>Made with love for the most amazing girl in the world. You're going to be a doctor, and I'm going to be your biggest fan.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#planner">Study Planner</a></li>
+            <li><a href="#subjects">Subject Notes</a></li>
+            <li><a href="#timer">Pomodoro Timer</a></li>
+            <li><a href="#progress">Progress Tracker</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Study Smart</h4>
+          <ul>
+            <li>NCERT is your Bible</li>
+            <li>Practice previous year papers</li>
+            <li>Revise daily, don't cram</li>
+            <li>Believe in yourself</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Made with &hearts; just for you | &copy; 2026 | You're going to CRACK NEET!</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" title="Back to top">&uarr;</button>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
