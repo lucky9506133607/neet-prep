@@ -571,43 +571,43 @@ function initQuotes() {
   const quotes = [
     // -- Discipline & Consistency --
     { text: "Discipline is choosing between what you want now and what you want most.", author: "Abraham Lincoln" },
-    { text: "It's not about being the best. It's about being better than you were yesterday.", author: "NEET Mantra" },
-    { text: "Small daily improvements are the key to staggering long-term results.", author: "NEET Mantra" },
-    { text: "Champions don't show up to get everything they want. They show up every day even when they don't.", author: "NEET Mantra" },
-    { text: "You don't need motivation every day. You need discipline every day.", author: "NEET Mantra" },
-    { text: "The difference between a 600 and a 700 score is what you do when you don't feel like studying.", author: "NEET Mantra" },
+    { text: "It's not about being the best. It's about being better than you were yesterday.", author: "Competition Mantra" },
+    { text: "Small daily improvements are the key to staggering long-term results.", author: "Competition Mantra" },
+    { text: "Champions don't show up to get everything they want. They show up every day even when they don't.", author: "Competition Mantra" },
+    { text: "You don't need motivation every day. You need discipline every day.", author: "Competition Mantra" },
+    { text: "The difference between a 600 and a 700 score is what you do when you don't feel like studying.", author: "Competition Mantra" },
 
     // -- Hard Work & Sacrifice --
     { text: "Hard work beats talent when talent doesn't work hard.", author: "Tim Notke" },
     { text: "There are no shortcuts to any place worth going.", author: "Beverly Sills" },
-    { text: "Sacrifice today what others won't, so tomorrow you can live like others can't.", author: "NEET Mantra" },
-    { text: "NCERT 10 times > any shortcut. Master the basics, crack the exam.", author: "NEET Mantra" },
+    { text: "Sacrifice today what others won't, so tomorrow you can live like others can't.", author: "Competition Mantra" },
+    { text: "NCERT 10 times > any shortcut. Master the basics, crack the exam.", author: "Competition Mantra" },
     { text: "The pain of discipline weighs ounces. The pain of regret weighs tons.", author: "Jim Rohn" },
-    { text: "One year of focused, honest hard work can change the next 30 years of your life.", author: "NEET Mantra" },
+    { text: "One year of focused, honest hard work can change the next 30 years of your life.", author: "Competition Mantra" },
 
     // -- Focus & Time Management --
     { text: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
-    { text: "Focus on the process, not the pressure. Results will follow.", author: "NEET Mantra" },
-    { text: "Every hour wasted today is a mark lost tomorrow. Study now.", author: "NEET Mantra" },
-    { text: "Put the phone down. Open the book. Your future self will thank you.", author: "NEET Mantra" },
+    { text: "Focus on the process, not the pressure. Results will follow.", author: "Competition Mantra" },
+    { text: "Every hour wasted today is a mark lost tomorrow. Study now.", author: "Competition Mantra" },
+    { text: "Put the phone down. Open the book. Your future self will thank you.", author: "Competition Mantra" },
     { text: "It always seems impossible until it's done.", author: "Nelson Mandela" },
-    { text: "You have the same 24 hours as every NEET topper. How you use them decides everything.", author: "NEET Mantra" },
+    { text: "You have the same 24 hours as every topper. How you use them decides everything.", author: "Competition Mantra" },
 
     // -- Success & Goals --
     { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
     { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
     { text: "A goal without a plan is just a wish. Plan your syllabus. Execute it daily.", author: "Antoine de Saint-Exupery" },
-    { text: "Your rank is being decided right now \u2014 in this very hour of study.", author: "NEET Mantra" },
-    { text: "Toppers are not born. They are made \u2014 one solved question at a time.", author: "NEET Mantra" },
+    { text: "Your rank is being decided right now \u2014 in this very hour of study.", author: "Competition Mantra" },
+    { text: "Toppers are not born. They are made \u2014 one solved question at a time.", author: "Competition Mantra" },
 
     // -- NEET Specific --
-    { text: "720 marks. 180 questions. One dream. Infinite effort. Start now.", author: "NEET Mantra" },
-    { text: "Biology won't memorize itself. Chemistry won't balance itself. Physics won't solve itself. Get to work.", author: "NEET Mantra" },
-    { text: "Every NCERT line you read is one step closer to that MBBS seat.", author: "NEET Mantra" },
-    { text: "Previous year papers are not practice. They are prophecy. Solve them.", author: "NEET Mantra" },
-    { text: "Revision is not optional. It is the difference between remembering and forgetting on exam day.", author: "NEET Mantra" },
-    { text: "The white coat doesn't come to the talented. It comes to the relentless.", author: "NEET Mantra" },
-    { text: "One chapter a day. One test a week. One dream in sight. Stay locked in.", author: "NEET Mantra" },
+    { text: "720 marks. 180 questions. One dream. Infinite effort. Start now.", author: "Competition Mantra" },
+    { text: "Biology won't memorize itself. Chemistry won't balance itself. Physics won't solve itself. Get to work.", author: "Competition Mantra" },
+    { text: "Every NCERT line you read is one step closer to that MBBS seat.", author: "Competition Mantra" },
+    { text: "Previous year papers are not practice. They are prophecy. Solve them.", author: "Competition Mantra" },
+    { text: "Revision is not optional. It is the difference between remembering and forgetting on exam day.", author: "Competition Mantra" },
+    { text: "The white coat doesn't come to the talented. It comes to the relentless.", author: "Competition Mantra" },
+    { text: "One chapter a day. One test a week. One dream in sight. Stay locked in.", author: "Competition Mantra" },
     { text: "Don't count the days. Make the days count.", author: "Muhammad Ali" }
   ];
 
@@ -652,10 +652,10 @@ function initPersonalMessages() {
   const messages = [
     { emoji: "\uD83D\uDD25", text: "Every tough question you solve today is one less question that can surprise you on exam day. Keep grinding." },
     { emoji: "\u2615", text: "Take a sip of water, stretch for 2 minutes, and get back to work. Breaks are part of the strategy, not weakness." },
-    { emoji: "\uD83C\uDFAF", text: "NEET rewards the consistent, not the last-minute cramers. One chapter a day keeps failure away." },
+    { emoji: "\uD83C\uDFAF", text: "Competition rewards the consistent, not the last-minute cramers. One chapter a day keeps failure away." },
     { emoji: "\uD83D\uDCAA", text: "You've already covered so much syllabus. Don't you dare think of giving up now. The finish line is closer than you think." },
     { emoji: "\uD83E\uDDE0", text: "Your brain is a muscle. The more you revise, the stronger it gets. Revision today = Recall on exam day." },
-    { emoji: "\uD83D\uDCDA", text: "Every NEET topper once sat where you're sitting right now. The only difference? They didn't stop." }
+    { emoji: "\uD83D\uDCDA", text: "Every Competition topper once sat where you're sitting right now. The only difference? They didn't stop." }
   ];
 
   grid.innerHTML = messages.map(msg => `
@@ -680,12 +680,12 @@ function initSurprise() {
   ];
 
   const surpriseMessages = [
-    "NEET preparation is tough \u2014 but so are you. Every chapter you finish, every mock test you take, every mistake you learn from is building the future doctor inside you. Don't stop now.",
+    "Competition preparation is tough \u2014 but so are you. Every chapter you finish, every mock test you take, every mistake you learn from is building the future doctor inside you. Don't stop now.",
     "Reminder: You're not just preparing for an exam. You're preparing to save lives. Every hour you study today is an hour that will matter to someone's life tomorrow. That's powerful.",
     "When it gets hard (and it will), remember why you started. Imagine the day you see your name on that merit list. Imagine walking into a medical college. That feeling is worth every sacrifice.",
-    "The difference between those who crack NEET and those who don't? It's not talent \u2014 it's consistency. Show up every single day. Solve one more question. Read one more page. That's it.",
+    "The difference between those who crack Competition and those who don't? It's not talent \u2014 it's consistency. Show up every single day. Solve one more question. Read one more page. That's it.",
     "Close your eyes for 10 seconds. Take a deep breath. Now open them and attack the next chapter with everything you've got. You have the ability. You just need the discipline to use it.",
-    "Fun fact: The human brain can store approximately 2.5 petabytes of information. You have more than enough capacity to master the entire NEET syllabus. Trust the process. Keep revising."
+    "Fun fact: The human brain can store approximately 2.5 petabytes of information. You have more than enough capacity to master the entire Competition syllabus. Trust the process. Keep revising."
   ];
 
   let messageIndex = 0;
