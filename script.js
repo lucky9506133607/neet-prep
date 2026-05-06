@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccordions();
   initTimer();
   initProgress();
+  initPersonalNotes();
+  initCompletionPopup();
   initQuotes();
   initPersonalMessages();
   initSurprise();
@@ -121,6 +123,14 @@ function initPlanner() {
   const tasksList = document.getElementById('tasksList');
   const tasksCount = document.getElementById('tasksCount');
   const clearCompletedBtn = document.getElementById('clearCompletedBtn');
+
+  // Show today's date
+  const plannerDate = document.getElementById('plannerDate');
+  if (plannerDate) {
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    plannerDate.textContent = '📅 ' + now.toLocaleDateString('en-IN', options);
+  }
 
   // Load tasks from localStorage
   let tasks = JSON.parse(localStorage.getItem('neet-tasks') || '[]');
@@ -485,26 +495,26 @@ function initProgress() {
   const checkboxes = document.querySelectorAll('.chapter-check');
   const overallCircle = document.getElementById('overallCircle');
   const overallPercent = document.getElementById('overallPercent');
-  const physicsFill = document.getElementById('physicsFill');
-  const chemistryFill = document.getElementById('chemistryFill');
-  const biologyFill = document.getElementById('biologyFill');
-  const physicsPercent = document.getElementById('physicsPercent');
-  const chemistryPercent = document.getElementById('chemistryPercent');
-  const biologyPercent = document.getElementById('biologyPercent');
 
-  // Load saved progress
-  const savedProgress = JSON.parse(localStorage.getItem('neet-progress') || '{}');
+  // Subject config: id → { fill, percent, slider }
+  const subjectIds = ['english', 'hindi', 'reasoning', 'quant', 'technical', 'gk'];
 
-  // Apply saved state to checkboxes
+  // Load saved checklist state
+  const savedChecklistState = JSON.parse(localStorage.getItem('neet-checklist') || '{}');
+
+  // Load saved manual slider progress
+  let manualProgress = JSON.parse(localStorage.getItem('neet-manual-progress') || '{}');
+
+  // Apply saved checklist state
   checkboxes.forEach((cb, index) => {
-    if (savedProgress[index]) {
+    if (savedChecklistState[index]) {
       cb.checked = true;
     }
-
     cb.addEventListener('change', () => {
-      savedProgress[index] = cb.checked;
-      localStorage.setItem('neet-progress', JSON.stringify(savedProgress));
-      updateProgressBars();
+      savedChecklistState[index] = cb.checked;
+      localStorage.setItem('neet-checklist', JSON.stringify(savedChecklistState));
+      syncChecklistToSliders();
+      updateOverall();
     });
   });
 
@@ -516,49 +526,176 @@ function initProgress() {
     tab.addEventListener('click', () => {
       checklistTabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-
       checklistContents.forEach(c => c.classList.remove('active'));
       document.getElementById(tab.dataset.target).classList.add('active');
     });
   });
 
-  updateProgressBars();
+  // Wire up manual sliders
+  subjectIds.forEach(subj => {
+    const slider = document.getElementById(subj + 'Slider');
+    const fill = document.getElementById(subj + 'Fill');
+    const pct = document.getElementById(subj + 'Percent');
+    if (!slider || !fill || !pct) return;
 
-  function updateProgressBars() {
-    // Count by subject
-    const subjects = { physics: { total: 0, done: 0 }, chemistry: { total: 0, done: 0 }, biology: { total: 0, done: 0 } };
+    // Apply saved manual value (or 0)
+    const savedVal = manualProgress[subj] !== undefined ? manualProgress[subj] : 0;
+    slider.value = savedVal;
+    fill.style.width = savedVal + '%';
+    pct.textContent = savedVal + '%';
 
-    checkboxes.forEach(cb => {
-      const subject = cb.dataset.subject;
-      if (subjects[subject]) {
-        subjects[subject].total++;
-        if (cb.checked) subjects[subject].done++;
-      }
+    slider.addEventListener('input', () => {
+      const val = parseInt(slider.value);
+      fill.style.width = val + '%';
+      pct.textContent = val + '%';
+      manualProgress[subj] = val;
+      localStorage.setItem('neet-manual-progress', JSON.stringify(manualProgress));
+      updateOverall();
+    });
+  });
+
+  // Sync checklist completion into sliders only if slider hasn't been manually moved
+  function syncChecklistToSliders() {
+    subjectIds.forEach(subj => {
+      const subjectBoxes = document.querySelectorAll(`.chapter-check[data-subject="${subj}"]`);
+      if (subjectBoxes.length === 0) return;
+      const done = Array.from(subjectBoxes).filter(cb => cb.checked).length;
+      const pctVal = Math.round((done / subjectBoxes.length) * 100);
+
+      // Only update slider if user hasn't manually adjusted it
+      const slider = document.getElementById(subj + 'Slider');
+      const fill = document.getElementById(subj + 'Fill');
+      const pctEl = document.getElementById(subj + 'Percent');
+      if (!slider) return;
+
+      // Use checklist-calculated value
+      slider.value = pctVal;
+      if (fill) fill.style.width = pctVal + '%';
+      if (pctEl) pctEl.textContent = pctVal + '%';
+      manualProgress[subj] = pctVal;
+    });
+    localStorage.setItem('neet-manual-progress', JSON.stringify(manualProgress));
+  }
+
+  function updateOverall() {
+    const vals = subjectIds.map(subj => {
+      return manualProgress[subj] !== undefined ? manualProgress[subj] : 0;
+    });
+    const avg = vals.length ? Math.round(vals.reduce((a, b) => a + b, 0) / vals.length) : 0;
+    if (overallPercent) overallPercent.textContent = avg + '%';
+    if (overallCircle) {
+      const circumference = 2 * Math.PI * 70;
+      overallCircle.style.strokeDashoffset = circumference * (1 - avg / 100);
+    }
+
+    // Trigger the 100% completion popup (only once per achievement)
+    if (avg === 100) {
+      triggerCompletionPopup();
+    }
+  }
+
+  updateOverall();
+}
+
+// ==================== 100% COMPLETION POPUP ====================
+// Global trigger — called from updateOverall() inside initProgress()
+function triggerCompletionPopup() {
+  // Only show once; localStorage flag prevents re-showing on refresh
+  if (localStorage.getItem('neet-completion-shown') === 'true') return;
+  const overlay = document.getElementById('completionOverlay');
+  if (!overlay) return;
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  launchCompletionSparks();
+}
+
+function initCompletionPopup() {
+  const overlay    = document.getElementById('completionOverlay');
+  const closeX     = document.getElementById('completionClose');
+  const closeBtn   = document.getElementById('completionCloseBtn');
+  const laterBtn   = document.getElementById('completionLaterBtn');
+  if (!overlay) return;
+
+  function closePopup(remember) {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+    // "Close" permanently marks as shown; "Remind me later" does NOT set the flag
+    if (remember) {
+      localStorage.setItem('neet-completion-shown', 'true');
+    }
+  }
+
+  closeX.addEventListener('click',   () => closePopup(true));
+  closeBtn.addEventListener('click', () => closePopup(true));
+  laterBtn.addEventListener('click', () => closePopup(false)); // will show again next time
+
+  // Click outside popup to dismiss (counts as permanent close)
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closePopup(true);
+  });
+
+  // Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('active')) closePopup(true);
+  });
+}
+
+function launchCompletionSparks() {
+  const container = document.getElementById('completionSparkles');
+  if (!container) return;
+  container.innerHTML = '';
+  const symbols = ['🎉', '✨', '🌟', '🏆', '💖', '🎊', '👑', '🌸'];
+  for (let i = 0; i < 18; i++) {
+    const el = document.createElement('span');
+    el.className = 'completion-spark';
+    el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    el.style.cssText = `
+      left: ${Math.random() * 100}%;
+      bottom: -20px;
+      font-size: ${Math.random() * 18 + 14}px;
+      animation-delay: ${Math.random() * 2}s;
+      animation-duration: ${Math.random() * 2 + 2.5}s;
+    `;
+    container.appendChild(el);
+  }
+}
+
+// ==================== PERSONAL NOTES (Subject Notes) ====================
+function initPersonalNotes() {
+  const subjects = ['english', 'hindi', 'reasoning', 'quant', 'technical', 'gk'];
+
+  subjects.forEach(subj => {
+    const textarea = document.getElementById(subj + '-notes');
+    const saveBtn = document.querySelector(`.save-notes-btn[data-subject="${subj}"]`);
+    const savedMsg = document.getElementById(subj + '-saved');
+    if (!textarea || !saveBtn) return;
+
+    // Load saved notes
+    const saved = localStorage.getItem('neet-notes-' + subj) || '';
+    textarea.value = saved;
+
+    // Auto-save on input (debounced)
+    let autoSaveTimer;
+    textarea.addEventListener('input', () => {
+      clearTimeout(autoSaveTimer);
+      autoSaveTimer = setTimeout(() => {
+        localStorage.setItem('neet-notes-' + subj, textarea.value);
+        showSavedMsg(savedMsg);
+      }, 800);
     });
 
-    // Calculate percentages
-    const physPct = subjects.physics.total ? Math.round((subjects.physics.done / subjects.physics.total) * 100) : 0;
-    const chemPct = subjects.chemistry.total ? Math.round((subjects.chemistry.done / subjects.chemistry.total) * 100) : 0;
-    const bioPct = subjects.biology.total ? Math.round((subjects.biology.done / subjects.biology.total) * 100) : 0;
+    // Manual save button
+    saveBtn.addEventListener('click', () => {
+      localStorage.setItem('neet-notes-' + subj, textarea.value);
+      showSavedMsg(savedMsg);
+    });
+  });
 
-    const totalDone = subjects.physics.done + subjects.chemistry.done + subjects.biology.done;
-    const totalAll = subjects.physics.total + subjects.chemistry.total + subjects.biology.total;
-    const overallPct = totalAll ? Math.round((totalDone / totalAll) * 100) : 0;
-
-    // Update bars
-    physicsFill.style.width = physPct + '%';
-    chemistryFill.style.width = chemPct + '%';
-    biologyFill.style.width = bioPct + '%';
-
-    physicsPercent.textContent = physPct + '%';
-    chemistryPercent.textContent = chemPct + '%';
-    biologyPercent.textContent = bioPct + '%';
-
-    // Update overall circular progress
-    overallPercent.textContent = overallPct + '%';
-    const circumference = 2 * Math.PI * 70; // radius = 70
-    const offset = circumference * (1 - overallPct / 100);
-    overallCircle.style.strokeDashoffset = offset;
+  function showSavedMsg(el) {
+    if (!el) return;
+    el.textContent = '✓ Saved!';
+    el.classList.add('visible');
+    setTimeout(() => el.classList.remove('visible'), 2000);
   }
 }
 
@@ -769,7 +906,7 @@ function initScrollAnimations() {
   }, { threshold: 0.1 });
 
   // Observe cards and sections
-  document.querySelectorAll('.planner-card, .overview-card, .timer-card, .study-tips-card, .progress-card, .quote-card, .message-card, .about-image-wrapper, .about-text, .about-highlight-item').forEach(el => {
+  document.querySelectorAll('.planner-card, .overview-card, .timer-card, .study-tips-card, .progress-card, .quote-card, .message-card, .about-image-wrapper, .about-text, .about-highlight-item, .personal-notes-section').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';

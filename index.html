@@ -149,6 +149,7 @@ This space is yours — your growth, your story, your crown. 👑
       <div class="section-header">
         <h2 class="section-title">Daily Study Planner</h2>
         <p class="section-subtitle">Plan your day, conquer the syllabus &hearts;</p>
+        <div class="planner-date" id="plannerDate"></div>
       </div>
 
       <div class="planner-grid">
@@ -157,9 +158,12 @@ This space is yours — your growth, your story, your crown. 👑
           <h3>Add Today's Tasks</h3>
           <div class="add-task-form">
             <select id="taskSubject" class="task-input">
-              <option value="physics">Physics</option>
-              <option value="chemistry">Chemistry</option>
-              <option value="biology">Biology</option>
+              <option value="english">English</option>
+              <option value="hindi">Hindi</option>
+              <option value="reasoning">Reasoning</option>
+              <option value="quant">Quantitative Aptitude</option>
+              <option value="technical">Technical</option>
+              <option value="gk">General Awareness</option>
               <option value="revision">Revision</option>
               <option value="test">Mock Test</option>
             </select>
@@ -201,271 +205,576 @@ This space is yours — your growth, your story, your crown. 👑
 
       <!-- Subject Tabs -->
       <div class="subject-tabs">
-        <button class="subject-tab active" data-subject="physics">
-          <span class="tab-icon">&#9883;</span> Physics
+        <button class="subject-tab active" data-subject="english">
+          <span class="tab-icon">&#128221;</span> English
         </button>
-        <button class="subject-tab" data-subject="chemistry">
-          <span class="tab-icon">&#9878;</span> Chemistry
+        <button class="subject-tab" data-subject="hindi">
+          <span class="tab-icon">&#128288;</span> Hindi
         </button>
-        <button class="subject-tab" data-subject="biology">
-          <span class="tab-icon">&#127793;</span> Biology
+        <button class="subject-tab" data-subject="reasoning">
+          <span class="tab-icon">&#129504;</span> Reasoning
+        </button>
+        <button class="subject-tab" data-subject="quant">
+          <span class="tab-icon">&#128200;</span> Quantitative
+        </button>
+        <button class="subject-tab" data-subject="technical">
+          <span class="tab-icon">&#127973;</span> Technical
+        </button>
+        <button class="subject-tab" data-subject="gk">
+          <span class="tab-icon">&#127758;</span> General Awareness
         </button>
       </div>
 
-      <!-- Physics Content -->
-      <div class="subject-content active" id="physics-content">
+      <!-- English Content -->
+      <div class="subject-content active" id="english-content">
         <div class="subject-overview">
           <div class="overview-card">
             <h3>&#127919; High-Weightage Topics</h3>
             <ul class="topic-list">
-              <li><span class="priority high">Must Do</span> Mechanics &mdash; Laws of Motion, Work-Energy-Power</li>
-              <li><span class="priority high">Must Do</span> Electrodynamics &mdash; Current Electricity, EMI</li>
-              <li><span class="priority high">Must Do</span> Optics &mdash; Ray &amp; Wave Optics</li>
-              <li><span class="priority medium">Important</span> Modern Physics &mdash; Atoms, Nuclei, Dual Nature</li>
-              <li><span class="priority medium">Important</span> Thermodynamics &mdash; KTG, Laws of Thermodynamics</li>
-              <li><span class="priority low">Good to Know</span> Semiconductors &mdash; Diodes, Transistors</li>
+              <li><span class="priority high">Must Do</span> Reading Comprehension &mdash; RC passages, inference questions</li>
+              <li><span class="priority high">Must Do</span> Grammar &mdash; Tenses, Voice, Narration, Articles</li>
+              <li><span class="priority high">Must Do</span> Error Detection &amp; Sentence Improvement</li>
+              <li><span class="priority medium">Important</span> Vocabulary &mdash; Synonyms, Antonyms, One-word Sub.</li>
+              <li><span class="priority medium">Important</span> Idioms &amp; Phrases, Cloze Test</li>
+              <li><span class="priority low">Good to Know</span> Para Jumbles &amp; Para Completion</li>
             </ul>
           </div>
           <div class="overview-card">
             <h3>&#128218; Chapter-wise Notes</h3>
             <div class="chapter-accordion">
               <div class="accordion-item">
-                <button class="accordion-header">Units &amp; Measurements</button>
+                <button class="accordion-header">Grammar &mdash; Tenses</button>
                 <div class="accordion-body">
                   <ul>
-                    <li><strong>SI Units:</strong> 7 base units &mdash; meter, kilogram, second, ampere, kelvin, mole, candela</li>
-                    <li><strong>Dimensional Analysis:</strong> Use [M L T] to check formula validity</li>
-                    <li><strong>Significant Figures:</strong> All non-zero digits are significant; leading zeros are not</li>
-                    <li><strong>Errors:</strong> Absolute, relative, and percentage errors in measurements</li>
-                    <li><strong>Tip:</strong> Practice dimensional analysis problems!</li>
+                    <li><strong>Simple Present:</strong> I write / She writes &mdash; habitual actions</li>
+                    <li><strong>Present Continuous:</strong> I am writing &mdash; action happening now</li>
+                    <li><strong>Present Perfect:</strong> I have written &mdash; recently completed action</li>
+                    <li><strong>Past Perfect:</strong> I had written &mdash; completed before another past action</li>
+                    <li><strong>Future Perfect:</strong> I will have written &mdash; completed before a future time</li>
+                    <li><strong>Tip:</strong> Learn signal words: already, yet, since, for, just, ever, never</li>
                   </ul>
                 </div>
               </div>
               <div class="accordion-item">
-                <button class="accordion-header">Laws of Motion</button>
+                <button class="accordion-header">Active &amp; Passive Voice</button>
                 <div class="accordion-body">
                   <ul>
-                    <li><strong>Newton's 1st Law:</strong> A body remains at rest or in uniform motion unless acted upon by a force</li>
-                    <li><strong>Newton's 2nd Law:</strong> F = ma (net force = mass &times; acceleration)</li>
-                    <li><strong>Newton's 3rd Law:</strong> Every action has an equal and opposite reaction</li>
-                    <li><strong>Friction:</strong> f = &mu;N &mdash; static friction &ge; kinetic friction</li>
-                    <li><strong>Free Body Diagrams:</strong> Always draw FBDs for complex problems!</li>
-                    <li><strong>Stay Focus:</strong> Problems on connected bodies, pulleys, and inclined planes</li>
+                    <li><strong>Active:</strong> Subject performs the action &mdash; She reads the book</li>
+                    <li><strong>Passive:</strong> Subject receives the action &mdash; The book is read by her</li>
+                    <li><strong>Formula:</strong> Object + helping verb (be) + V3 + by + Subject</li>
+                    <li><strong>Modals in Passive:</strong> can/could/may/must + be + V3</li>
+                    <li><strong>Tip:</strong> Identify V3 form of the verb and place it after "been/be/being"</li>
                   </ul>
                 </div>
               </div>
               <div class="accordion-item">
-                <button class="accordion-header">Work, Energy &amp; Power</button>
+                <button class="accordion-header">Direct &amp; Indirect Speech</button>
                 <div class="accordion-body">
                   <ul>
-                    <li><strong>Work:</strong> W = F &middot; d &middot; cos&theta;</li>
-                    <li><strong>Kinetic Energy:</strong> KE = &frac12;mv&sup2;</li>
-                    <li><strong>Potential Energy:</strong> PE = mgh (gravitational)</li>
-                    <li><strong>Work-Energy Theorem:</strong> Net work = Change in KE</li>
-                    <li><strong>Conservation of Energy:</strong> Total energy in an isolated system is constant</li>
-                    <li><strong>Power:</strong> P = W/t = F &middot; v</li>
+                    <li><strong>Reporting Verb:</strong> Said, told, asked, ordered, exclaimed</li>
+                    <li><strong>Tense Change:</strong> Present → Past; Present Perfect → Past Perfect</li>
+                    <li><strong>Pronoun Change:</strong> I → he/she; We → they; You → he/she/they</li>
+                    <li><strong>Time Change:</strong> Now → then; Today → that day; Tomorrow → next day</li>
+                    <li><strong>Questions:</strong> Use "if/whether" for yes-no questions in indirect speech</li>
                   </ul>
                 </div>
               </div>
               <div class="accordion-item">
-                <button class="accordion-header">Electrostatics</button>
+                <button class="accordion-header">Error Spotting &amp; Sentence Correction</button>
                 <div class="accordion-body">
                   <ul>
-                    <li><strong>Coulomb's Law:</strong> F = kq&sub1;q&sub2;/r&sup2;</li>
-                    <li><strong>Electric Field:</strong> E = F/q (force per unit charge)</li>
-                    <li><strong>Electric Potential:</strong> V = kQ/r</li>
-                    <li><strong>Gauss's Law:</strong> &Phi; = q/&epsilon;&sub0; (flux through closed surface)</li>
-                    <li><strong>Capacitors:</strong> C = Q/V, series and parallel combinations</li>
-                    <li><strong>Competition Tip:</strong> Master electric field diagrams and potential energy concepts</li>
+                    <li><strong>Subject-Verb Agreement:</strong> Singular subject → singular verb (Everyone is…)</li>
+                    <li><strong>Pronoun Errors:</strong> Each/Everyone + singular pronoun (his/her, not their)</li>
+                    <li><strong>Misplaced Modifiers:</strong> Modifier must be next to what it modifies</li>
+                    <li><strong>Preposition Errors:</strong> Interested in, tired of, afraid of, differ from</li>
+                    <li><strong>Redundancy:</strong> Avoid "revert back", "future plans", "past history"</li>
                   </ul>
                 </div>
               </div>
               <div class="accordion-item">
-                <button class="accordion-header">Current Electricity</button>
+                <button class="accordion-header">Vocabulary &mdash; Synonyms &amp; Antonyms</button>
                 <div class="accordion-body">
                   <ul>
-                    <li><strong>Ohm's Law:</strong> V = IR</li>
-                    <li><strong>Kirchhoff's Laws:</strong> Junction rule (current) &amp; Loop rule (voltage)</li>
-                    <li><strong>Wheatstone Bridge:</strong> Balanced when P/Q = R/S</li>
-                    <li><strong>Meter Bridge &amp; Potentiometer:</strong> Important for Competition practical questions</li>
-                    <li><strong>Power:</strong> P = VI = I&sup2;R = V&sup2;/R</li>
+                    <li><strong>Abate:</strong> Synonym: decrease, Antonym: increase, intensify</li>
+                    <li><strong>Benevolent:</strong> Synonym: kind/generous, Antonym: malevolent/cruel</li>
+                    <li><strong>Candid:</strong> Synonym: frank/honest, Antonym: dishonest/evasive</li>
+                    <li><strong>Diligent:</strong> Synonym: hardworking, Antonym: lazy/idle</li>
+                    <li><strong>Tip:</strong> Learn root words: bene (good), mal (bad), ante (before), post (after)</li>
+                    <li><strong>Idiom:</strong> "Bite the bullet" = endure pain; "Break the ice" = start conversation</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <!-- Personal Notes -->
+        <div class="personal-notes-section">
+          <h3>&#9999;&#65039; My Personal Notes &mdash; English</h3>
+          <textarea class="notes-textarea" id="english-notes" placeholder="Write your own notes, formulas, tips here... They are saved automatically!"></textarea>
+          <div class="notes-actions">
+            <button class="btn btn-primary btn-sm save-notes-btn" data-subject="english">Save Notes</button>
+            <span class="notes-saved-msg" id="english-saved"></span>
+          </div>
+        </div>
       </div>
 
-      <!-- Chemistry Content -->
-      <div class="subject-content" id="chemistry-content">
+      <!-- Hindi Content -->
+      <div class="subject-content" id="hindi-content">
         <div class="subject-overview">
           <div class="overview-card">
             <h3>&#127919; High-Weightage Topics</h3>
             <ul class="topic-list">
-              <li><span class="priority high">Must Do</span> Organic Chemistry &mdash; GOC, Reactions, Named Reactions</li>
-              <li><span class="priority high">Must Do</span> Chemical Bonding &amp; Molecular Structure</li>
-              <li><span class="priority high">Must Do</span> Coordination Compounds</li>
-              <li><span class="priority medium">Important</span> Equilibrium &mdash; Ionic, Chemical, pH</li>
-              <li><span class="priority medium">Important</span> p-Block &amp; d-Block Elements</li>
-              <li><span class="priority low">Good to Know</span> Biomolecules, Polymers, Chemistry in Everyday Life</li>
+              <li><span class="priority high">Must Do</span> संधि (Sandhi) &mdash; स्वर, व्यंजन, विसर्ग संधि</li>
+              <li><span class="priority high">Must Do</span> समास (Samas) &mdash; सभी 6 प्रकार</li>
+              <li><span class="priority high">Must Do</span> मुहावरे और लोकोक्तियाँ</li>
+              <li><span class="priority medium">Important</span> पर्यायवाची एवं विलोम शब्द</li>
+              <li><span class="priority medium">Important</span> अलंकार &mdash; शब्दालंकार, अर्थालंकार</li>
+              <li><span class="priority low">Good to Know</span> रस, छंद &amp; काव्य बोध</li>
             </ul>
           </div>
           <div class="overview-card">
             <h3>&#128218; Chapter-wise Notes</h3>
             <div class="chapter-accordion">
               <div class="accordion-item">
-                <button class="accordion-header">Atomic Structure</button>
+                <button class="accordion-header">संधि (Sandhi)</button>
                 <div class="accordion-body">
                   <ul>
-                    <li><strong>Bohr's Model:</strong> Electrons orbit in fixed energy levels; E = -13.6/n&sup2; eV</li>
-                    <li><strong>Quantum Numbers:</strong> n (principal), l (azimuthal), m (magnetic), s (spin)</li>
-                    <li><strong>Aufbau Principle:</strong> Electrons fill lowest energy orbitals first</li>
-                    <li><strong>Hund's Rule:</strong> Every orbital in a subshell gets one electron before pairing</li>
-                    <li><strong>Pauli's Exclusion:</strong> No two electrons can have same 4 quantum numbers</li>
+                    <li><strong>स्वर संधि:</strong> दो स्वरों के मेल से &mdash; विद्या + आलय = विद्यालय</li>
+                    <li><strong>दीर्घ संधि:</strong> अ/आ + अ/आ = आ &mdash; देव + आलय = देवालय</li>
+                    <li><strong>यण संधि:</strong> इ/ई + अन्य स्वर = य &mdash; अति + आचार = अत्याचार</li>
+                    <li><strong>व्यंजन संधि:</strong> व्यंजन + स्वर/व्यंजन का मेल</li>
+                    <li><strong>विसर्ग संधि:</strong> विसर्ग के साथ स्वर/व्यंजन का मेल</li>
+                    <li><strong>Tip:</strong> संधि विच्छेद करने का अभ्यास करें!</li>
                   </ul>
                 </div>
               </div>
               <div class="accordion-item">
-                <button class="accordion-header">Chemical Bonding</button>
+                <button class="accordion-header">समास (Samas)</button>
                 <div class="accordion-body">
                   <ul>
-                    <li><strong>Ionic Bond:</strong> Transfer of electrons (high &Delta;EN)</li>
-                    <li><strong>Covalent Bond:</strong> Sharing of electrons</li>
-                    <li><strong>VSEPR Theory:</strong> Predicts molecular geometry from electron pairs</li>
-                    <li><strong>Hybridization:</strong> sp (linear), sp&sup2; (trigonal planar), sp&sup3; (tetrahedral)</li>
-                    <li><strong>MOT:</strong> Bonding &amp; antibonding molecular orbitals, bond order</li>
-                    <li><strong>Hydrogen Bonding:</strong> Intermolecular force with F, O, N</li>
+                    <li><strong>अव्ययीभाव:</strong> प्रथम पद प्रधान &mdash; यथाशक्ति, प्रतिदिन</li>
+                    <li><strong>तत्पुरुष:</strong> उत्तर पद प्रधान &mdash; राजपुत्र, देशभक्त</li>
+                    <li><strong>कर्मधारय:</strong> विशेषण-विशेष्य &mdash; नीलकमल, महापुरुष</li>
+                    <li><strong>द्विगु:</strong> संख्यावाचक &mdash; त्रिभुज, सप्ताह, नवरात्र</li>
+                    <li><strong>द्वंद्व:</strong> दोनों पद प्रधान &mdash; राम-श्याम, माता-पिता</li>
+                    <li><strong>बहुव्रीहि:</strong> अन्य पद प्रधान &mdash; चतुर्भुज, नीलकंठ</li>
                   </ul>
                 </div>
               </div>
               <div class="accordion-item">
-                <button class="accordion-header">Organic Chemistry &mdash; GOC</button>
+                <button class="accordion-header">मुहावरे (Muhavare)</button>
                 <div class="accordion-body">
                   <ul>
-                    <li><strong>Inductive Effect:</strong> +I (electron donating) and -I (electron withdrawing)</li>
-                    <li><strong>Resonance:</strong> Delocalization of electrons across conjugated systems</li>
-                    <li><strong>Hyperconjugation:</strong> No-bond resonance with &alpha;-hydrogens</li>
-                    <li><strong>Carbocation Stability:</strong> 3&deg; > 2&deg; > 1&deg; > CH&sub3;+</li>
-                    <li><strong>Reaction Types:</strong> SN1, SN2, E1, E2 &mdash; know the conditions!</li>
-                    <li><strong>Named Reactions:</strong> Wurtz, Aldol, Cannizzaro, Kolbe &mdash; memorize!</li>
+                    <li><strong>आँखें खुलना:</strong> सच्चाई का पता चलना</li>
+                    <li><strong>अंधे की लाठी:</strong> एकमात्र सहारा</li>
+                    <li><strong>कान का कच्चा:</strong> बिना जाँचे विश्वास करना</li>
+                    <li><strong>नाक में दम करना:</strong> बहुत परेशान करना</li>
+                    <li><strong>हाथ-पाँव मारना:</strong> बहुत कोशिश करना</li>
+                    <li><strong>Tip:</strong> रोज़ 5 मुहावरे याद करें और वाक्य में प्रयोग करें</li>
                   </ul>
                 </div>
               </div>
               <div class="accordion-item">
-                <button class="accordion-header">Thermodynamics &amp; Equilibrium</button>
+                <button class="accordion-header">पर्यायवाची &amp; विलोम शब्द</button>
                 <div class="accordion-body">
                   <ul>
-                    <li><strong>Enthalpy:</strong> &Delta;H = heat change at constant pressure</li>
-                    <li><strong>Entropy:</strong> &Delta;S = measure of randomness</li>
-                    <li><strong>Gibbs Free Energy:</strong> &Delta;G = &Delta;H - T&Delta;S (spontaneity check)</li>
-                    <li><strong>Equilibrium Constant:</strong> K = products/reactants at equilibrium</li>
-                    <li><strong>Le Chatelier's Principle:</strong> System adjusts to counter applied stress</li>
+                    <li><strong>आकाश:</strong> पर्याय &mdash; गगन, अंबर, नभ, आसमान</li>
+                    <li><strong>पानी:</strong> पर्याय &mdash; जल, नीर, वारि, तोय, अंबु</li>
+                    <li><strong>सत्य का विलोम:</strong> असत्य / मिथ्या</li>
+                    <li><strong>सुख का विलोम:</strong> दुख / कष्ट</li>
+                    <li><strong>आदि का विलोम:</strong> अंत / अनादि</li>
+                    <li><strong>Tip:</strong> एक शब्द के कम-से-कम 5 पर्यायवाची याद करें</li>
                   </ul>
                 </div>
               </div>
               <div class="accordion-item">
-                <button class="accordion-header">Coordination Compounds</button>
+                <button class="accordion-header">अलंकार (Alankar)</button>
                 <div class="accordion-body">
                   <ul>
-                    <li><strong>Werner's Theory:</strong> Primary (ionizable) &amp; secondary (non-ionizable) valency</li>
-                    <li><strong>IUPAC Naming:</strong> Ligands (alphabetical) + metal + oxidation state</li>
-                    <li><strong>Isomerism:</strong> Geometrical (cis/trans), optical, linkage, ionization</li>
-                    <li><strong>Crystal Field Theory:</strong> t2g and eg splitting, CFSE</li>
-                    <li><strong>Magnetic Properties:</strong> Paramagnetic vs diamagnetic based on unpaired electrons</li>
+                    <li><strong>उपमा:</strong> दो वस्तुओं में समानता &mdash; "मुख चंद्रमा के समान है"</li>
+                    <li><strong>रूपक:</strong> समानता में अभेद &mdash; "मुख चंद्रमा है"</li>
+                    <li><strong>उत्प्रेक्षा:</strong> कल्पना &mdash; "मानो सूरज आग बरसा रहा हो"</li>
+                    <li><strong>अनुप्रास:</strong> एक ही वर्ण की पुनरावृत्ति &mdash; "चारु चंद्र की चंचल किरणें"</li>
+                    <li><strong>यमक:</strong> एक शब्द अलग-अलग अर्थ में &mdash; "कनक कनक ते सौ गुनी"</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="personal-notes-section">
+          <h3>&#9999;&#65039; My Personal Notes &mdash; Hindi</h3>
+          <textarea class="notes-textarea" id="hindi-notes" placeholder="अपने नोट्स यहाँ लिखें... वे automatically save होते हैं!"></textarea>
+          <div class="notes-actions">
+            <button class="btn btn-primary btn-sm save-notes-btn" data-subject="hindi">Save Notes</button>
+            <span class="notes-saved-msg" id="hindi-saved"></span>
+          </div>
+        </div>
       </div>
 
-      <!-- Biology Content -->
-      <div class="subject-content" id="biology-content">
+      <!-- Reasoning Content -->
+      <div class="subject-content" id="reasoning-content">
         <div class="subject-overview">
           <div class="overview-card">
             <h3>&#127919; High-Weightage Topics</h3>
             <ul class="topic-list">
-              <li><span class="priority high">Must Do</span> Human Physiology &mdash; All systems (digestion, respiration, circulation)</li>
-              <li><span class="priority high">Must Do</span> Genetics &amp; Evolution &mdash; Mendel's laws, molecular basis</li>
-              <li><span class="priority high">Must Do</span> Ecology &amp; Environment</li>
-              <li><span class="priority medium">Important</span> Plant Physiology &mdash; Photosynthesis, Respiration</li>
-              <li><span class="priority medium">Important</span> Cell Biology &amp; Biomolecules</li>
-              <li><span class="priority medium">Important</span> Reproduction &mdash; Human &amp; Plant</li>
-              <li><span class="priority low">Good to Know</span> Biotechnology &amp; its Applications</li>
+              <li><span class="priority high">Must Do</span> Series &mdash; Number, Letter, Mixed Series</li>
+              <li><span class="priority high">Must Do</span> Coding-Decoding &amp; Analogy</li>
+              <li><span class="priority high">Must Do</span> Blood Relations &amp; Direction-Distance</li>
+              <li><span class="priority medium">Important</span> Seating Arrangement &amp; Puzzles</li>
+              <li><span class="priority medium">Important</span> Syllogism &amp; Statement-Conclusion</li>
+              <li><span class="priority low">Good to Know</span> Non-Verbal &mdash; Mirror Image, Paper Folding</li>
             </ul>
           </div>
           <div class="overview-card">
             <h3>&#128218; Chapter-wise Notes</h3>
             <div class="chapter-accordion">
               <div class="accordion-item">
-                <button class="accordion-header">Cell: The Unit of Life</button>
+                <button class="accordion-header">Number &amp; Letter Series</button>
                 <div class="accordion-body">
                   <ul>
-                    <li><strong>Cell Theory:</strong> All living things are made of cells; cell is the basic unit of life</li>
-                    <li><strong>Prokaryotic vs Eukaryotic:</strong> Nucleus presence, membrane-bound organelles</li>
-                    <li><strong>Cell Organelles:</strong> Mitochondria (powerhouse), ER, Golgi, Lysosomes, Ribosomes</li>
-                    <li><strong>Cell Membrane:</strong> Fluid mosaic model &mdash; phospholipid bilayer + proteins</li>
-                    <li><strong>Nucleus:</strong> Contains DNA, nuclear envelope with pores, nucleolus</li>
-                    <li><strong>Competition Tip:</strong> Diagrams are important &mdash; practice drawing organelles!</li>
+                    <li><strong>Arithmetic Series:</strong> Common difference &mdash; 2, 5, 8, 11, 14 (diff = 3)</li>
+                    <li><strong>Geometric Series:</strong> Common ratio &mdash; 2, 4, 8, 16, 32 (ratio = 2)</li>
+                    <li><strong>Square Series:</strong> 1, 4, 9, 16, 25, 36... (n&sup2;)</li>
+                    <li><strong>Cube Series:</strong> 1, 8, 27, 64, 125... (n&sup3;)</li>
+                    <li><strong>Mixed Series:</strong> Combine two patterns; find both and apply</li>
+                    <li><strong>Letter Series:</strong> A=1, B=2... Z=26. AZBYCX &mdash; find the pattern!</li>
                   </ul>
                 </div>
               </div>
               <div class="accordion-item">
-                <button class="accordion-header">Human Physiology &mdash; Digestion</button>
+                <button class="accordion-header">Coding &amp; Decoding</button>
                 <div class="accordion-body">
                   <ul>
-                    <li><strong>Alimentary Canal:</strong> Mouth &rarr; Esophagus &rarr; Stomach &rarr; Small intestine &rarr; Large intestine</li>
-                    <li><strong>Enzymes:</strong> Amylase (starch), Pepsin (protein), Lipase (fats)</li>
-                    <li><strong>Stomach:</strong> HCl activates pepsinogen to pepsin; pH ~1.5-2</li>
-                    <li><strong>Small Intestine:</strong> Major absorption site; villi increase surface area</li>
-                    <li><strong>Liver:</strong> Produces bile for fat emulsification</li>
-                    <li><strong>Competition Tip:</strong> Know all enzymes and their substrates!</li>
+                    <li><strong>Letter Coding:</strong> Each letter shifted by fixed value &mdash; A→D, B→E (+3)</li>
+                    <li><strong>Reverse Coding:</strong> A=Z, B=Y, C=X... opposite end</li>
+                    <li><strong>Number Coding:</strong> A=1, B=2 or A=2, B=3 (position-based)</li>
+                    <li><strong>Word Coding:</strong> Rearranged or substituted words &mdash; find the rule</li>
+                    <li><strong>Tip:</strong> Always find the pattern with given examples before solving</li>
                   </ul>
                 </div>
               </div>
               <div class="accordion-item">
-                <button class="accordion-header">Genetics &mdash; Mendel's Laws</button>
+                <button class="accordion-header">Blood Relations</button>
                 <div class="accordion-body">
                   <ul>
-                    <li><strong>Law of Dominance:</strong> One allele dominates over the other</li>
-                    <li><strong>Law of Segregation:</strong> Alleles separate during gamete formation</li>
-                    <li><strong>Law of Independent Assortment:</strong> Genes on different chromosomes sort independently</li>
-                    <li><strong>Monohybrid Cross:</strong> 3:1 phenotypic ratio (Tt x Tt)</li>
-                    <li><strong>Dihybrid Cross:</strong> 9:3:3:1 ratio</li>
-                    <li><strong>Incomplete Dominance:</strong> Blending (e.g., pink snapdragons)</li>
-                    <li><strong>Codominance:</strong> Both alleles expressed (e.g., AB blood group)</li>
+                    <li><strong>Key Terms:</strong> Son/Daughter, Father/Mother, Brother/Sister, Nephew/Niece</li>
+                    <li><strong>Paternal:</strong> Father's side &mdash; Grandfather, Uncle (Father's brother = Paternal uncle)</li>
+                    <li><strong>Maternal:</strong> Mother's side &mdash; Maternal uncle, Maternal aunt</li>
+                    <li><strong>In-laws:</strong> Father-in-law, Mother-in-law, Son-in-law, Daughter-in-law</li>
+                    <li><strong>Tip:</strong> Draw a family tree. Use M/F symbols. Arrows show relationships.</li>
                   </ul>
                 </div>
               </div>
               <div class="accordion-item">
-                <button class="accordion-header">Ecology &amp; Environment</button>
+                <button class="accordion-header">Direction &amp; Distance</button>
                 <div class="accordion-body">
                   <ul>
-                    <li><strong>Ecosystem:</strong> Biotic + abiotic components interacting together</li>
-                    <li><strong>Food Chain:</strong> Producer &rarr; Primary consumer &rarr; Secondary &rarr; Tertiary</li>
-                    <li><strong>Energy Flow:</strong> Only 10% energy transfers to next trophic level</li>
-                    <li><strong>Ecological Pyramids:</strong> Number, biomass, and energy pyramids</li>
-                    <li><strong>Biogeochemical Cycles:</strong> Carbon, nitrogen, phosphorus, water cycles</li>
-                    <li><strong>Biodiversity:</strong> &alpha;, &beta;, &gamma; diversity; hotspots (Western Ghats!)</li>
+                    <li><strong>Main Directions:</strong> N, S, E, W &mdash; NE, NW, SE, SW as diagonals</li>
+                    <li><strong>Left Turn:</strong> Rotate 90° anti-clockwise; Right Turn: 90° clockwise</li>
+                    <li><strong>Shadow Rule:</strong> Morning sun = East (shadow falls West); Evening = West (shadow East)</li>
+                    <li><strong>Final Distance:</strong> Use Pythagoras theorem if perpendicular movements</li>
+                    <li><strong>Tip:</strong> Always draw a diagram and mark each move carefully</li>
                   </ul>
                 </div>
               </div>
               <div class="accordion-item">
-                <button class="accordion-header">Photosynthesis</button>
+                <button class="accordion-header">Syllogism</button>
                 <div class="accordion-body">
                   <ul>
-                    <li><strong>Light Reaction:</strong> Occurs in thylakoids; produces ATP + NADPH + O&sub2;</li>
-                    <li><strong>Dark Reaction (Calvin Cycle):</strong> Occurs in stroma; fixes CO&sub2; into glucose</li>
-                    <li><strong>Photosystems:</strong> PS-I (P700) and PS-II (P680)</li>
-                    <li><strong>C3 vs C4 Plants:</strong> C4 has Kranz anatomy, no photorespiration</li>
-                    <li><strong>CAM Plants:</strong> Fix CO&sub2; at night (succulents, cacti)</li>
-                    <li><strong>Factors:</strong> Light intensity, CO&sub2; concentration, temperature</li>
+                    <li><strong>All A are B:</strong> A is fully inside B (Venn diagram)</li>
+                    <li><strong>No A is B:</strong> A and B have no intersection</li>
+                    <li><strong>Some A are B:</strong> Partial overlap between A and B</li>
+                    <li><strong>Some A are not B:</strong> At least part of A is outside B</li>
+                    <li><strong>Tip:</strong> Check all possibilities with Venn diagrams; don't assume</li>
+                    <li><strong>Either-Or Cases:</strong> When neither conclusion follows alone but both together do</li>
                   </ul>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="personal-notes-section">
+          <h3>&#9999;&#65039; My Personal Notes &mdash; Reasoning</h3>
+          <textarea class="notes-textarea" id="reasoning-notes" placeholder="Write your tricks, shortcuts, and patterns here..."></textarea>
+          <div class="notes-actions">
+            <button class="btn btn-primary btn-sm save-notes-btn" data-subject="reasoning">Save Notes</button>
+            <span class="notes-saved-msg" id="reasoning-saved"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quantitative Aptitude Content -->
+      <div class="subject-content" id="quant-content">
+        <div class="subject-overview">
+          <div class="overview-card">
+            <h3>&#127919; High-Weightage Topics</h3>
+            <ul class="topic-list">
+              <li><span class="priority high">Must Do</span> Percentage, Profit &amp; Loss &mdash; most common in exams</li>
+              <li><span class="priority high">Must Do</span> Simple &amp; Compound Interest &mdash; formula-based</li>
+              <li><span class="priority high">Must Do</span> Time, Speed &amp; Distance &amp; Time &amp; Work</li>
+              <li><span class="priority medium">Important</span> Ratio, Proportion &amp; Averages</li>
+              <li><span class="priority medium">Important</span> Data Interpretation &mdash; Tables, Bar, Pie charts</li>
+              <li><span class="priority low">Good to Know</span> Geometry, Mensuration &amp; Trigonometry</li>
+            </ul>
+          </div>
+          <div class="overview-card">
+            <h3>&#128218; Chapter-wise Notes</h3>
+            <div class="chapter-accordion">
+              <div class="accordion-item">
+                <button class="accordion-header">Percentage &amp; Ratio</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>% to Fraction:</strong> 25% = 1/4; 33.33% = 1/3; 12.5% = 1/8</li>
+                    <li><strong>% Change:</strong> (New - Old) / Old &times; 100</li>
+                    <li><strong>Ratio a:b = c:d:</strong> Cross multiplication &mdash; ad = bc</li>
+                    <li><strong>Compound Ratio:</strong> a:b and c:d → ac:bd</li>
+                    <li><strong>Tip:</strong> Memorize fraction-% equivalents up to 1/12 for speed!</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Profit, Loss &amp; Discount</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Profit %:</strong> (SP - CP) / CP &times; 100</li>
+                    <li><strong>Loss %:</strong> (CP - SP) / CP &times; 100</li>
+                    <li><strong>SP = CP &times; (100 + P%) / 100</strong></li>
+                    <li><strong>Discount:</strong> On Marked Price; SP = MP &times; (100 - D%) / 100</li>
+                    <li><strong>Successive Discount:</strong> x% and y% = x + y - xy/100</li>
+                    <li><strong>Tip:</strong> When two items sold at same SP with equal % profit &amp; loss &rarr; always a loss!</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Simple &amp; Compound Interest</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>SI = PRT/100</strong> (P = Principal, R = Rate, T = Time in years)</li>
+                    <li><strong>CI = P(1 + R/100)^T - P</strong></li>
+                    <li><strong>CI - SI for 2 years = P(R/100)&sup2;</strong></li>
+                    <li><strong>Effective Rate for 2 years:</strong> R + R + R&sup2;/100</li>
+                    <li><strong>Tip:</strong> For CI, multiply P by (1 + R/100) for each year</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Time, Speed &amp; Distance</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Formula:</strong> Speed = Distance / Time; D = S &times; T; T = D / S</li>
+                    <li><strong>Unit Conversion:</strong> km/h to m/s: multiply by 5/18; m/s to km/h: multiply by 18/5</li>
+                    <li><strong>Relative Speed:</strong> Same direction = S1 - S2; Opposite = S1 + S2</li>
+                    <li><strong>Train Problems:</strong> Time = (Length of train + Length of platform) / Speed</li>
+                    <li><strong>Average Speed:</strong> 2ab/(a+b) when equal distances at speeds a and b</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Time &amp; Work</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>If A does work in n days:</strong> A's 1-day work = 1/n</li>
+                    <li><strong>A + B together:</strong> 1/A + 1/B = 1/Total Days</li>
+                    <li><strong>Pipes &amp; Cisterns:</strong> Inlet fills (+), Outlet empties (-)</li>
+                    <li><strong>Work &amp; Wages:</strong> Wages proportional to work done (not days if efficiency differs)</li>
+                    <li><strong>Tip:</strong> Use LCM method &mdash; assume total work = LCM of individual days</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="personal-notes-section">
+          <h3>&#9999;&#65039; My Personal Notes &mdash; Quantitative Aptitude</h3>
+          <textarea class="notes-textarea" id="quant-notes" placeholder="Write formulas, shortcuts, and practice questions here..."></textarea>
+          <div class="notes-actions">
+            <button class="btn btn-primary btn-sm save-notes-btn" data-subject="quant">Save Notes</button>
+            <span class="notes-saved-msg" id="quant-saved"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical (Radiographer) Content -->
+      <div class="subject-content" id="technical-content">
+        <div class="subject-overview">
+          <div class="overview-card">
+            <h3>&#127919; High-Weightage Topics</h3>
+            <ul class="topic-list">
+              <li><span class="priority high">Must Do</span> X-ray Physics &mdash; Production, Properties, Interactions</li>
+              <li><span class="priority high">Must Do</span> Radiographic Positioning &mdash; All body parts</li>
+              <li><span class="priority high">Must Do</span> Radiation Safety &amp; Protection &mdash; ALARA principle</li>
+              <li><span class="priority medium">Important</span> Anatomy for Radiographers &mdash; Skeletal &amp; Organ systems</li>
+              <li><span class="priority medium">Important</span> Darkroom Technology &amp; Film Processing</li>
+              <li><span class="priority low">Good to Know</span> CT, MRI, Ultrasound &mdash; Basic Principles</li>
+            </ul>
+          </div>
+          <div class="overview-card">
+            <h3>&#128218; Chapter-wise Notes</h3>
+            <div class="chapter-accordion">
+              <div class="accordion-item">
+                <button class="accordion-header">X-ray Physics &amp; Production</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>X-ray Tube:</strong> Cathode (filament) emits electrons; Anode (tungsten target) produces X-rays</li>
+                    <li><strong>Bremsstrahlung:</strong> Braking radiation &mdash; electron decelerates near nucleus</li>
+                    <li><strong>Characteristic Radiation:</strong> Electron displaces inner-shell electron of target atom</li>
+                    <li><strong>kVp:</strong> Controls X-ray quality (penetration); mAs controls quantity (density)</li>
+                    <li><strong>Properties of X-rays:</strong> Travel at speed of light, not deflected by magnetic fields, cause ionization</li>
+                    <li><strong>Tip:</strong> kVp ↑ = more penetration; mAs ↑ = more density on film</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Radiographic Positioning</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>PA Chest:</strong> Posteroanterior; patient faces the film; shows heart size accurately</li>
+                    <li><strong>AP View:</strong> Anteroposterior; beam enters from front; used when PA not possible</li>
+                    <li><strong>Lateral:</strong> Patient sideways; left or right lateral specified</li>
+                    <li><strong>Oblique:</strong> Patient rotated at angle (e.g., RAO, LAO, RPO, LPO)</li>
+                    <li><strong>Skull Views:</strong> PA, Lateral, Towne's (occipital bone), Waters (PNS)</li>
+                    <li><strong>Tip:</strong> Learn standard views, SID (Source-to-Image Distance), and OFD for each region</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Radiation Safety &amp; Protection</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>ALARA:</strong> As Low As Reasonably Achievable &mdash; guiding principle</li>
+                    <li><strong>Annual Dose Limit:</strong> Occupational = 20 mSv/year; Public = 1 mSv/year</li>
+                    <li><strong>Protective Devices:</strong> Lead apron (0.25-0.5 mm Pb), thyroid collar, gonad shields</li>
+                    <li><strong>Inverse Square Law:</strong> Intensity &prop; 1/distance&sup2; &mdash; double distance = quarter intensity</li>
+                    <li><strong>Monitoring:</strong> TLD (Thermoluminescent Dosimeter), Film badge, Pocket dosimeter</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Darkroom &amp; Film Processing</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Safelight:</strong> Red/amber light used in darkroom &mdash; does not expose film</li>
+                    <li><strong>Processing Steps:</strong> Developer → Stop Bath → Fixer → Wash → Dry</li>
+                    <li><strong>Developer:</strong> Reduces exposed silver halide crystals to metallic silver (creates the image)</li>
+                    <li><strong>Fixer:</strong> Removes unexposed silver halide; makes image permanent</li>
+                    <li><strong>Automatic Processor:</strong> Developer temp ~35°C; Total processing time ~90 seconds</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Special Imaging Techniques</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Fluoroscopy:</strong> Real-time X-ray imaging; used for GI studies (Barium swallow, enema)</li>
+                    <li><strong>CT Scan:</strong> Multiple X-ray slices; cross-sectional images; HU (Hounsfield Units) scale</li>
+                    <li><strong>MRI:</strong> Uses magnetic field + radio waves; no radiation; best for soft tissue</li>
+                    <li><strong>Ultrasound:</strong> High-frequency sound waves; real-time imaging; safe in pregnancy</li>
+                    <li><strong>Contrast Media:</strong> Barium sulfate (GI), Iodine-based (IV &amp; vascular); positive/negative contrast</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="personal-notes-section">
+          <h3>&#9999;&#65039; My Personal Notes &mdash; Technical (Radiographer)</h3>
+          <textarea class="notes-textarea" id="technical-notes" placeholder="Write technical notes, imaging protocols, anatomy diagrams here..."></textarea>
+          <div class="notes-actions">
+            <button class="btn btn-primary btn-sm save-notes-btn" data-subject="technical">Save Notes</button>
+            <span class="notes-saved-msg" id="technical-saved"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- General Awareness Content -->
+      <div class="subject-content" id="gk-content">
+        <div class="subject-overview">
+          <div class="overview-card">
+            <h3>&#127919; High-Weightage Topics</h3>
+            <ul class="topic-list">
+              <li><span class="priority high">Must Do</span> Current Affairs &mdash; Last 6 months news, national &amp; international</li>
+              <li><span class="priority high">Must Do</span> Indian Constitution &mdash; Articles, Schedules, Amendments</li>
+              <li><span class="priority high">Must Do</span> Indian History &mdash; Freedom Struggle, Modern India</li>
+              <li><span class="priority medium">Important</span> Indian Geography &mdash; Rivers, Mountains, States</li>
+              <li><span class="priority medium">Important</span> Science &amp; Technology &mdash; Inventions, Space, Health</li>
+              <li><span class="priority low">Good to Know</span> Sports, Awards &amp; International Organizations</li>
+            </ul>
+          </div>
+          <div class="overview-card">
+            <h3>&#128218; Chapter-wise Notes</h3>
+            <div class="chapter-accordion">
+              <div class="accordion-item">
+                <button class="accordion-header">Indian Constitution &mdash; Key Articles</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Art. 14:</strong> Equality before law; Art. 15: No discrimination; Art. 16: Equality of opportunity</li>
+                    <li><strong>Art. 19:</strong> Freedom of speech, assembly, movement; Art. 21: Right to life &amp; liberty</li>
+                    <li><strong>Art. 32:</strong> Right to Constitutional Remedies &mdash; "Heart &amp; Soul of Constitution" (Ambedkar)</li>
+                    <li><strong>Art. 370:</strong> Special status to J&K (revoked 2019); Art. 371: Special provisions for NE states</li>
+                    <li><strong>Schedules:</strong> 12 Schedules &mdash; 8th Schedule (22 languages), 10th Schedule (Anti-defection)</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Indian History &mdash; Modern Era</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>1857 Revolt:</strong> First War of Independence; started at Meerut on 10 May 1857</li>
+                    <li><strong>INC Founded:</strong> 1885 by A.O. Hume; first session in Bombay</li>
+                    <li><strong>Non-Cooperation (1920):</strong> Led by Gandhi; boycott of British goods &amp; institutions</li>
+                    <li><strong>Civil Disobedience (1930):</strong> Dandi March &mdash; Salt Satyagraha; 12 March to 5 April</li>
+                    <li><strong>Quit India (1942):</strong> "Do or Die" on 8 August; Gandhi arrested</li>
+                    <li><strong>Independence:</strong> 15 August 1947; Partition into India and Pakistan</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Indian Geography &mdash; Key Facts</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Largest State:</strong> Rajasthan (area); Uttar Pradesh (population)</li>
+                    <li><strong>Longest River:</strong> Ganga (within India); Indus (total length)</li>
+                    <li><strong>Highest Peak:</strong> Kangchenjunga (within India, 8,586 m); K2 (India's claim)</li>
+                    <li><strong>Important Passes:</strong> Nathu La (Sikkim), Rohtang (HP), Banihal (J&K), Zoji La (J&K)</li>
+                    <li><strong>Tropic of Cancer:</strong> Passes through 8 states &mdash; Gujarat to Mizoram</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Science &amp; Technology</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>ISRO Missions:</strong> Chandrayaan-3 (2023 moon landing), Mangalyaan (Mars Orbiter), Aditya-L1 (Sun)</li>
+                    <li><strong>Nobel Prizes 2024:</strong> Keep updated on latest winners in Physics, Chemistry, Medicine, Peace</li>
+                    <li><strong>Health Schemes:</strong> Ayushman Bharat (PMJAY), PM-ABHIM, Mission Indradhanush</li>
+                    <li><strong>Important Inventions:</strong> X-ray (Röntgen 1895), Penicillin (Fleming 1928), Polio vaccine (Salk 1955)</li>
+                    <li><strong>Tip:</strong> Read monthly current affairs magazine &amp; government scheme updates</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">Sports &amp; Awards</button>
+                <div class="accordion-body">
+                  <ul>
+                    <li><strong>Khel Ratna:</strong> Highest sports honour in India (formerly Rajiv Gandhi Khel Ratna)</li>
+                    <li><strong>Arjuna Award:</strong> For outstanding performance in sports over 4 years</li>
+                    <li><strong>Dronacharya:</strong> For coaches of award-winning athletes</li>
+                    <li><strong>Olympics 2024:</strong> Paris; India's medals &mdash; keep updated!</li>
+                    <li><strong>ICC World Cup:</strong> T20 World Cup 2024 &mdash; India won! Caribbean &amp; USA host</li>
+                    <li><strong>Padma Awards:</strong> Bharat Ratna, Padma Vibhushan, Padma Bhushan, Padma Shri</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="personal-notes-section">
+          <h3>&#9999;&#65039; My Personal Notes &mdash; General Awareness</h3>
+          <textarea class="notes-textarea" id="gk-notes" placeholder="Paste important current affairs, facts, and key dates here..."></textarea>
+          <div class="notes-actions">
+            <button class="btn btn-primary btn-sm save-notes-btn" data-subject="gk">Save Notes</button>
+            <span class="notes-saved-msg" id="gk-saved"></span>
           </div>
         </div>
       </div>
@@ -557,36 +866,72 @@ This space is yours — your growth, your story, your crown. 👑
 
         <!-- Subject Progress -->
         <div class="progress-card subject-progress-card">
-          <h3>Subject-wise Progress</h3>
+          <h3>Subject-wise Progress <span class="manual-hint">(drag slider to update)</span></h3>
 
           <div class="subject-progress-item">
             <div class="subject-info">
-              <span class="subject-name">&#9883; Physics</span>
-              <span class="subject-percent" id="physicsPercent">0%</span>
+              <span class="subject-name">&#128221; English</span>
+              <span class="subject-percent" id="englishPercent">0%</span>
             </div>
             <div class="progress-bar">
-              <div class="progress-bar-fill physics-fill" id="physicsFill"></div>
+              <div class="progress-bar-fill english-fill" id="englishFill"></div>
             </div>
+            <input type="range" class="progress-slider" id="englishSlider" min="0" max="100" value="0" data-subject="english" />
           </div>
 
           <div class="subject-progress-item">
             <div class="subject-info">
-              <span class="subject-name">&#9878; Chemistry</span>
-              <span class="subject-percent" id="chemistryPercent">0%</span>
+              <span class="subject-name">&#128288; Hindi</span>
+              <span class="subject-percent" id="hindiPercent">0%</span>
             </div>
             <div class="progress-bar">
-              <div class="progress-bar-fill chemistry-fill" id="chemistryFill"></div>
+              <div class="progress-bar-fill hindi-fill" id="hindiFill"></div>
             </div>
+            <input type="range" class="progress-slider" id="hindiSlider" min="0" max="100" value="0" data-subject="hindi" />
           </div>
 
           <div class="subject-progress-item">
             <div class="subject-info">
-              <span class="subject-name">&#127793; Biology</span>
-              <span class="subject-percent" id="biologyPercent">0%</span>
+              <span class="subject-name">&#129504; Reasoning</span>
+              <span class="subject-percent" id="reasoningPercent">0%</span>
             </div>
             <div class="progress-bar">
-              <div class="progress-bar-fill biology-fill" id="biologyFill"></div>
+              <div class="progress-bar-fill reasoning-fill" id="reasoningFill"></div>
             </div>
+            <input type="range" class="progress-slider" id="reasoningSlider" min="0" max="100" value="0" data-subject="reasoning" />
+          </div>
+
+          <div class="subject-progress-item">
+            <div class="subject-info">
+              <span class="subject-name">&#128200; Quantitative</span>
+              <span class="subject-percent" id="quantPercent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar-fill quant-fill" id="quantFill"></div>
+            </div>
+            <input type="range" class="progress-slider" id="quantSlider" min="0" max="100" value="0" data-subject="quant" />
+          </div>
+
+          <div class="subject-progress-item">
+            <div class="subject-info">
+              <span class="subject-name">&#127973; Technical</span>
+              <span class="subject-percent" id="technicalPercent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar-fill technical-fill" id="technicalFill"></div>
+            </div>
+            <input type="range" class="progress-slider" id="technicalSlider" min="0" max="100" value="0" data-subject="technical" />
+          </div>
+
+          <div class="subject-progress-item">
+            <div class="subject-info">
+              <span class="subject-name">&#127758; General Awareness</span>
+              <span class="subject-percent" id="gkPercent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar-fill gk-fill" id="gkFill"></div>
+            </div>
+            <input type="range" class="progress-slider" id="gkSlider" min="0" max="100" value="0" data-subject="gk" />
           </div>
         </div>
 
@@ -594,108 +939,152 @@ This space is yours — your growth, your story, your crown. 👑
         <div class="progress-card checklist-card">
           <h3>Chapter Completion Checklist</h3>
           <div class="checklist-tabs">
-            <button class="checklist-tab active" data-target="physics-checklist">Physics</button>
-            <button class="checklist-tab" data-target="chemistry-checklist">Chemistry</button>
-            <button class="checklist-tab" data-target="biology-checklist">Biology</button>
+            <button class="checklist-tab active" data-target="english-checklist">&#128221; English</button>
+            <button class="checklist-tab" data-target="hindi-checklist">&#128288; Hindi</button>
+            <button class="checklist-tab" data-target="reasoning-checklist">&#129504; Reasoning</button>
+            <button class="checklist-tab" data-target="quant-checklist">&#128200; Quant</button>
+            <button class="checklist-tab" data-target="technical-checklist">&#127973; Technical</button>
+            <button class="checklist-tab" data-target="gk-checklist">&#127758; GK</button>
           </div>
 
-          <div class="checklist-content active" id="physics-checklist">
+          <div class="checklist-content active" id="english-checklist">
             <ul class="checklist">
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Units &amp; Measurements</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Motion in a Straight Line</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Motion in a Plane</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Laws of Motion</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Work, Energy &amp; Power</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Rotational Motion</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Gravitation</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Mechanical Properties of Solids</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Mechanical Properties of Fluids</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Thermal Properties of Matter</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Thermodynamics</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Kinetic Theory of Gases</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Oscillations</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Waves</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Electrostatics</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Current Electricity</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Magnetic Effects of Current</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Magnetism &amp; Matter</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> EMI &amp; AC</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> EM Waves</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Ray Optics</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Wave Optics</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Dual Nature of Matter</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Atoms &amp; Nuclei</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="physics" /> Semiconductor Electronics</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="english" /> <span>Reading Comprehension</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="english" /> <span>Tenses</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="english" /> <span>Active &amp; Passive Voice</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="english" /> <span>Direct &amp; Indirect Speech</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="english" /> <span>Articles &amp; Prepositions</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="english" /> <span>Conjunctions &amp; Modifiers</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="english" /> <span>Error Spotting</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="english" /> <span>Sentence Improvement</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="english" /> <span>Fill in the Blanks</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="english" /> <span>Synonyms</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="english" /> <span>Antonyms</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="english" /> <span>Idioms &amp; Phrases</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="english" /> <span>One-word Substitution</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="english" /> <span>Cloze Test</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="english" /> <span>Para Jumbles</span></label></li>
             </ul>
           </div>
 
-          <div class="checklist-content" id="chemistry-checklist">
+          <div class="checklist-content" id="hindi-checklist">
             <ul class="checklist">
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Some Basic Concepts of Chemistry</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Atomic Structure</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Classification of Elements</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Chemical Bonding</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> States of Matter</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Thermodynamics</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Equilibrium</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Redox Reactions</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Hydrogen</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> s-Block Elements</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> p-Block Elements</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Organic Chemistry &mdash; GOC</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Hydrocarbons</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Solutions</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Electrochemistry</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Chemical Kinetics</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Surface Chemistry</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> d &amp; f Block Elements</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Coordination Compounds</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Haloalkanes &amp; Haloarenes</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Alcohols, Phenols &amp; Ethers</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Aldehydes, Ketones &amp; Carboxylic Acids</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Amines</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Biomolecules</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="chemistry" /> Polymers</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="hindi" /> <span>रस</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="hindi" /> <span>अलंकार</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="hindi" /> <span>समास</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="hindi" /> <span>पर्यायवाची</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="hindi" /> <span>विलोम</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="hindi" /> <span>तत्सम / तद्भव</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="hindi" /> <span>मुहावरे एवं लोकोक्तियाँ</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="hindi" /> <span>वर्तनी एवं वाक्य संशोधन</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="hindi" /> <span>संधि</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="hindi" /> <span>लिंग</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="hindi" /> <span>वचन</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="hindi" /> <span>कारक</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="hindi" /> <span>संज्ञा</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="hindi" /> <span>सर्वनाम</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="hindi" /> <span>विशेषण</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="hindi" /> <span>क्रिया</span></label></li>
             </ul>
           </div>
 
-          <div class="checklist-content" id="biology-checklist">
+          <div class="checklist-content" id="reasoning-checklist">
             <ul class="checklist">
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> The Living World</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Biological Classification</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Plant Kingdom</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Animal Kingdom</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Morphology of Flowering Plants</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Anatomy of Flowering Plants</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Structural Organisation in Animals</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Cell: Unit of Life</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Biomolecules</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Cell Cycle &amp; Division</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Transport in Plants</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Mineral Nutrition</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Photosynthesis</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Respiration in Plants</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Plant Growth &amp; Development</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Digestion &amp; Absorption</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Breathing &amp; Exchange of Gases</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Body Fluids &amp; Circulation</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Excretory Products</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Locomotion &amp; Movement</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Neural Control &amp; Coordination</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Chemical Coordination</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Reproduction in Organisms</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Human Reproduction</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Reproductive Health</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Principles of Inheritance</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Molecular Basis of Inheritance</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Evolution</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Human Health &amp; Disease</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Microbes in Human Welfare</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Biotechnology: Principles</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Biotechnology: Applications</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Organisms &amp; Populations</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Ecosystem</label></li>
-              <li><label><input type="checkbox" class="chapter-check" data-subject="biology" /> Biodiversity &amp; Conservation</label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="reasoning" /> <span>Problem-solving</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="reasoning" /> <span>Analogies</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="reasoning" /> <span>Judgment and Decision-making</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="reasoning" /> <span>Visual Memory</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="reasoning" /> <span>Observation</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="reasoning" /> <span>Relationship Concepts</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="reasoning" /> <span>Arithmetical Reasoning</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="reasoning" /> <span>Verbal and Figure Classification</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="reasoning" /> <span>Arithmetical Number Series</span></label></li>
+            </ul>
+          </div>
+
+          <div class="checklist-content" id="quant-checklist">
+            <ul class="checklist">
+              <li><label><input type="checkbox" class="chapter-check" data-subject="quant" /> <span>Simplification</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="quant" /> <span>Decimals</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="quant" /> <span>Data Interpretation</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="quant" /> <span>Fractions</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="quant" /> <span>L.C.M &amp; H.C.F</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="quant" /> <span>Ratio &amp; Proportion</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="quant" /> <span>Percentage</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="quant" /> <span>Average</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="quant" /> <span>Profit &amp; Loss</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="quant" /> <span>Discount</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="quant" /> <span>Simple &amp; Compound Interest</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="quant" /> <span>Mensuration</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="quant" /> <span>Time &amp; Work</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="quant" /> <span>Time &amp; Distance</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="quant" /> <span>Tables &amp; Graphs</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="quant" /> <span>Number Systems</span></label></li>
+            </ul>
+          </div>
+
+          <div class="checklist-content" id="technical-checklist">
+            <ul class="checklist">
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Anatomy &mdash; Skeletal System</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Anatomy &mdash; Thorax</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Anatomy &mdash; Abdomen</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Anatomy &mdash; Head &amp; Neck</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>X-ray Physics</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Radiation Production</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Radiographic Film &amp; Processing</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Darkroom Technology</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Positioning &mdash; Chest</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Positioning &mdash; Spine</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Positioning &mdash; Extremities</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Fluoroscopy</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>CT Scan</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>MRI Basics</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Ultrasound</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Radiation Safety</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Quality Control</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Contrast Media</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Radiation Dosimetry</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Equipment Maintenance</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Basic Science Anatomy</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Physiology</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Radiobiology &amp; Radiation Physics</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Principles and Practice of Radiotherapy</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Radiation Regulation, Protection &amp; Standards</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="technical" /> <span>Hospital Practice, Patient Care &amp; Record Keeping</span></label></li>
+            </ul>
+          </div>
+
+          <div class="checklist-content" id="gk-checklist">
+            <ul class="checklist">
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Ancient Indian History</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Medieval Indian History</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Modern Indian History</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Indian Constitution</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Indian Polity</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Indian Economy</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Indian Geography</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>World Geography</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Indian Culture &amp; Heritage</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Science &amp; Technology</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Environment &amp; Ecology</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Sports &amp; Awards</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>International Organisations</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Important Days &amp; Events</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Government Schemes</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Current Affairs &mdash; National</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Current Affairs &mdash; International</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>History</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Polity</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Constitution</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Sports</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Art &amp; Culture</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Geography</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Economics</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Everyday Science</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Scientific Research</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>National / International Organizations &amp; Institutions</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Awards</span></label></li>
+              <li><label><input type="checkbox" class="chapter-check" data-subject="gk" /> <span>Books and Their Authors</span></label></li>
             </ul>
           </div>
         </div>
@@ -748,6 +1137,36 @@ This space is yours — your growth, your story, your crown. 👑
         </p>
         <div class="surprise-sparkles">
           <span>&#10024;</span><span>&#10024;</span><span>&#10024;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 100% COMPLETION POPUP ==================== -->
+  <div class="completion-overlay" id="completionOverlay">
+    <div class="completion-popup" id="completionPopup">
+      <button class="completion-close" id="completionClose">&times;</button>
+
+      <!-- Confetti / sparkle layer -->
+      <div class="completion-sparkles" id="completionSparkles"></div>
+
+      <div class="completion-content">
+        <div class="completion-trophy">&#127942;</div>
+        <h2 class="completion-title">100% Complete!</h2>
+        <p class="completion-subtitle">You actually did it, Queen &#128081;</p>
+        <p class="completion-message">
+          I think it's time for a saree pic now &#128516;
+        </p>
+        <div class="completion-stars">
+          <span>&#11088;</span><span>&#11088;</span><span>&#11088;</span>
+        </div>
+        <div class="completion-buttons">
+          <button class="btn btn-primary completion-btn-close" id="completionCloseBtn">
+            &#10003; Close
+          </button>
+          <button class="btn btn-outline completion-btn-later" id="completionLaterBtn">
+            &#128337; Remind me later
+          </button>
         </div>
       </div>
     </div>
